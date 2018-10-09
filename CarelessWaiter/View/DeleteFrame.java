@@ -1,7 +1,6 @@
 package View;
 
 import Controller.Controller;
-import Model.Student;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -31,7 +30,7 @@ public class DeleteFrame {
         Group root = new Group();
         setTabPane();
         root.getChildren().addAll(tp);
-        setActionOnButtons();
+        //setActionOnButtons();
         Scene scene = new Scene(root, 1560, 175);
         Stage stage = new Stage();
         stage.setTitle("Удаление");
@@ -45,7 +44,7 @@ public class DeleteFrame {
         tp.setLayoutX(3);
         tp.setLayoutY(7);
 
-        Tab tabFamily = new Tab("удаление по фамилии и кол-ву членов семьи");
+       /* Tab tabFamily = new Tab("удаление по фамилии и кол-ву членов семьи");
         tabFamily.setContent(justclass.getRootFamily());
         familyButton = new Button("удаление");
         justclass.getRootFamily().getChildren().addAll(familyButton);
@@ -71,7 +70,7 @@ public class DeleteFrame {
 
     }
 
-    public void setActionOnButtons() {
+  /*  public void setActionOnButtons() {
         familyButton.setOnAction(e -> {
             List<Student> resultOfSearch = controller.searchStudents(justclass.getStudentFamily(), "Family");
             controller.removeStudent(resultOfSearch);
@@ -111,7 +110,7 @@ public class DeleteFrame {
             alert.setHeaderText("Нет таких студентов!!");
             alert.showAndWait();
         }
-    }
-}
+    }*/
+}}
 
 

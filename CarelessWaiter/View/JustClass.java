@@ -1,6 +1,5 @@
 package View;
 
-import Model.Student;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
@@ -16,7 +15,7 @@ public class JustClass {
     private TextField areaMaxField1;
     private TextField surnameFieldArea1;
     private TextField perareaField;
-    private Student searchStudent = new Student();
+   // private Student searchStudent = new Student();
     private VBox rootFamily;
     private VBox rootArea;
     private VBox rootSurname;
@@ -120,7 +119,7 @@ public class JustClass {
     }
 
 
-    public Student getStudentFamily () {
+    /*public Student getStudentFamily () {
         searchStudent.clean();
         searchStudent.setSurname(surnameFieldFamily1.getText());
         searchStudent.setFamily(Integer.valueOf(surnameFieldFamily2.getText()));
@@ -199,6 +198,6 @@ public class JustClass {
 
     public TextField getPerareaField() {
         return perareaField;
-    }
+    }*/
 
 }

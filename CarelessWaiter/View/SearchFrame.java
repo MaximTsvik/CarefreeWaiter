@@ -1,7 +1,6 @@
 package View;
 
 import Controller.Controller;
-import Model.Student;
 import javafx.collections.FXCollections;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -29,7 +28,7 @@ public class SearchFrame {
         this.controller = controller;
     }
 
-    public void start () {
+   /* public void start () {
         justclass = new JustClass();
         Group root = new Group();
         setTabPane();
@@ -41,9 +40,9 @@ public class SearchFrame {
         stage.setTitle("Поиск студентов");
         stage.setScene(scene);
         stage.showAndWait();
-    }
+    }*/
 
-    public void setActionOnButtons () {
+   /* public void setActionOnButtons () {
 
         familyButton.setOnAction(e -> {
             List<Student> resultOfSearch = controller.searchStudents(justclass.getStudentFamily(), "Family");
@@ -134,5 +133,5 @@ public class SearchFrame {
 
     public TabPane getTabPane() {
         return tp;
-    }
+    }*/
 }

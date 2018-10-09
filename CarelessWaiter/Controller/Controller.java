@@ -1,57 +1,58 @@
 package Controller;
 
-import Model.Student;
-import Model.StudentBase;
+import Model.Dish;
+import Model.DishBase;
+import View.Form;
 import View.MainFrame;
+import View.Offer;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Controller {
+    private Form form;
+    private Offer offer;
     private MainFrame mainFrame;
-    private StudentBase studentBase;
+    private DishBase dishBase;
 
     public Controller() {
-        studentBase = new StudentBase(this);
         mainFrame = new MainFrame(this);
+        //offer = new Offer(this.mainFrame, this);
+        dishBase = new DishBase(this);
     }
 
-    public void removeStudent(List<Student> stud) {
-        getStudentBase().removeAll(stud);
+    /*public void removeStudent(List<Dish> stud) {
+        getDishBase().removeAll(dis);
+    }*/
+
+    public void addDish(Dish dish) {
+        dishBase.add(dish);
     }
 
-    public void addStudent(Student student) {
-        studentBase.add(student);
-    }
-
-    public List<Student> getStudentBase() {
-        return studentBase.getStudentsBase();
-    }
-
-    public MainFrame getMainFrame() {
-        return mainFrame;
+    public List<Dish> getDishBase() {
+        return dishBase.getDishBase();
     }
 
     public void setFile(File file){
-        studentBase.setFile(file);
+        dishBase.setFile(file);
     }
 
     public void toFile(File file){
-        studentBase.toFile(file);
+        dishBase.toFile(file);
     }
 
-    public void fromFile(){
-        studentBase.fromFile();
-        mainFrame.update();
-    }
+   /* public void fromFile(){
+        dishBase.fromFile();
+    //    mainFrame.update();
+    }*/
 
-    public List<Student> searchStudents (Student searchStudent, String paramSearch) {
-        List<Student> searchStud = new ArrayList<>();
-        List<Student> allStudents = getStudentBase();
+    /*public List<Dish> searchStudents (Dish searchStudent, String paramSearch) {
+        List<Dish> searchStud = new ArrayList<>();
+        List<Dish> allStudents = getStudentBase();
 
        if (paramSearch.equals("Family")) {
-            for (Student stud : allStudents) {
+            for (Dish stud : allStudents) {
                 if (stud.getSurname().equals(searchStudent.getSurname())
                         && (stud.getFamily() == (searchStudent.getFamily()))) {
                     searchStud.add(stud);
@@ -91,9 +92,9 @@ public class Controller {
        }
 
         return searchStud;
-    }
+    }*/
 
-    public void alertMessage(String text){
+    /*public void alertMessage(String text){
         mainFrame.alertMessage(text);
-    }
+    }*/
 }

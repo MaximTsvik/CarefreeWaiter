@@ -1,6 +1,6 @@
 package XML;
 
-import Model.StudentBase;
+import Model.DishBase;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -17,26 +17,22 @@ import java.io.File;
 public class XMLDomParser {
     private File file;
     private Document document;
-    private StudentBase studentBase;
+    private DishBase dishBase;
 
-    public void write(File file, StudentBase studentBase) {
+    public void write(File file, DishBase studentBase) {
         this.file = file;
-        this.studentBase = studentBase;
-        try {
+        this.dishBase = dishBase;
+        /*try {
             document = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
             Element list = document.createElement("list");
 
-            for (int numOfStudent = 0; numOfStudent < studentBase.getStudentsBase().size(); numOfStudent++) {
-                Element student = document.createElement("student");
-                student.setAttribute("id", numOfStudent + "");
-
-                Element surname = document.createElement("surname");
-                surname.setTextContent(studentBase.getStudentsBase().get(numOfStudent).getSurname());
-                student.appendChild(surname);
+           /* for (int numOfDish = 0; numOfDish < studentBase.getDishBase().size(); numOfDish++) {
+                Element dish = document.createElement("dish");
+                dish.setAttribute("id", numOfDish + "");
 
                 Element name = document.createElement("name");
-                name.setTextContent(studentBase.getStudentsBase().get(numOfStudent).getName());
-                student.appendChild(name);
+                name.setTextContent(dishBase.getDishBase().get(numOfDish).getName());
+                dish.appendChild(name);
 
                 Element fatherName = document.createElement("fatherName");
                 fatherName.setTextContent(studentBase.getStudentsBase().get(numOfStudent).getFatherName());
@@ -64,9 +60,9 @@ public class XMLDomParser {
 
                 Element perarea = document.createElement("perarea");
                 perarea.setTextContent(String.valueOf(studentBase.getStudentsBase().get(numOfStudent).getPerarea()));
-                student.appendChild(perarea);
+                student.appendChild(perarea);*/
 
-                list.appendChild(student);
+         /*       list.appendChild(dish);
             }
 
             document.appendChild(list);
@@ -76,13 +72,13 @@ public class XMLDomParser {
             transformer.transform(source, streamResult);
         } catch (ParserConfigurationException ex) {
             String exText = ex.getMessage();
-            studentBase.getController().alertMessage(exText);
+            dishBase.getController().alertMessage(exText);
         } catch (TransformerConfigurationException ex) {
             String exText = ex.getMessage();
-            studentBase.getController().alertMessage(exText);
+            dishBase.getController().alertMessage(exText);
         } catch (TransformerException ex) {
             String exText = ex.getMessage();
-            studentBase.getController().alertMessage(exText);
-        }
+            dishBase.getController().alertMessage(exText);
+        }*/
     }
 }

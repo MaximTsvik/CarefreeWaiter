@@ -1,7 +1,9 @@
 package View;
 
 
-import Model.Student;
+import Model.Dish;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,52 +14,36 @@ import javafx.scene.layout.VBox;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Form {
 
-    private TableView<Student> studentTable;
+    private TableView<Dish> dishTable;
     private VBox paneBox;
-    private int currentPage = 0;
-    private int recordsOnPage = 10;
-    private List<Student> list;
-    private Label allRecordsLabel;
-    private Label allPageLabel;
-
+    private List<Dish> list;
 
     public Form() {
-       studentTable = new TableView<>();
+       dishTable = new TableView<>();
 
         List<TableColumn> listOfColumns = new ArrayList<>();
 
-        TableColumn<Student,String> fullNameColumn = new TableColumn<>("ФИО студента");
-        fullNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().FIO()));
-        fullNameColumn.setMinWidth(300);
+        TableColumn<Dish,String> dishName = new TableColumn<>("Имя");
+        dishName.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getName()));
+        dishName.setMinWidth(136);
 
-        TableColumn<Student,String> studentAdress = new TableColumn<>("Адрес");
-        studentAdress.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().Adress()));
-        studentAdress.setMinWidth(300);
+        TableColumn<Dish,Double> dishValue = new TableColumn<>("Объем");
+        dishValue.setCellValueFactory(param -> new SimpleObjectProperty<>(param.getValue().getValue()));
+        dishValue.setMinWidth(30);
 
-        TableColumn<Student,String> studentFamily = new TableColumn<>("Количество членов семьи");
-        studentFamily.setCellValueFactory(new PropertyValueFactory<>("family"));
-        studentFamily.setMinWidth(220);
+        TableColumn<Dish,Double> dishCost = new TableColumn<>("Цена");
+        dishCost.setCellValueFactory(param -> new SimpleObjectProperty<>(param.getValue().getCost()));
+        dishCost.setMinWidth(30);
 
-        TableColumn<Student,String> studentArea = new TableColumn<>("Общая площадь");
-        studentArea.setCellValueFactory(new PropertyValueFactory<>("area"));
-        studentArea.setMinWidth(200);
+        dishTable.setPrefSize(300,300);
 
-        TableColumn<Student,String> studentPerarea = new TableColumn<>("Площадь на человека");
-        studentPerarea.setCellValueFactory(new PropertyValueFactory<>("perarea"));
-        studentPerarea.setMinWidth(200);
+        dishTable.getColumns().addAll(dishName, dishValue, dishCost);
 
-        studentTable.setPrefSize(1600,400);
+        //paneBox = new VBox(20);
 
-        studentTable.getColumns().addAll(fullNameColumn, studentAdress, studentFamily, studentArea, studentPerarea);
-
-        paneBox = new VBox(20);
-
-        HBox pageBox = new HBox(20);
-
-        Label currentPageLabel = new Label("Текущая страница: "+ (currentPage+1));
+        /*Label currentPageLabel = new Label("Текущая страница: "+ (currentPage+1));
 
         allPageLabel = new Label("Кол-во страниц: " + 0);
         allRecordsLabel = new Label();
@@ -109,36 +95,31 @@ public class Form {
             recordOnPagesField.clear();
             allPageLabel.setText("Кол-во страниц: " + (int)Math.ceil((double)list.size()/recordsOnPage));
 
-        });
-        pageBox.getChildren().addAll(firstPage, previousPage, nextPage, lastPage, currentPageLabel, allPageLabel,
-                allRecordsLabel, recordOnPages, recordOnPagesField, enterRecord);
-
-        paneBox.getChildren().addAll(studentTable, pageBox);
-        paneBox.setSpacing(3);
+        });*/
+        /*pageBox.getChildren().addAll(firstPage, previousPage, nextPage, lastPage, currentPageLabel, allPageLabel,
+                allRecordsLabel, recordOnPages, recordOnPagesField, enterRecord);*/
 
     }
 
-    public VBox getPaneBox() {
+    /*public VBox getPaneBox() {
         return paneBox;
-    }
+    }*/
 
-    public TableView<Student> getStudentTable() {
-        return studentTable;
+    public TableView<Dish> getDishTable() {
+        return dishTable;
     }
 
     public void clear() {
-        ObservableList<Student> list = FXCollections.observableArrayList();
-        studentTable.setItems(list);
+        ObservableList<Dish> list = FXCollections.observableArrayList();
+        dishTable.setItems(list);
     }
 
-    public void setList(List<Student> studentList)
+    public void setList(List<Dish> dishList)
     {
-        this.list = studentList;
-        allRecordsLabel.setText("Кол-во записей: " + studentList.size());
-        allPageLabel.setText("Кол-во страниц: " + (int)Math.ceil((double)list.size()/recordsOnPage));
+        this.list = dishList;
     }
 
-    public void setCurrentPage(int currentPage) {
+   /* public void setCurrentPage(int currentPage) {
         List<Student> page = new ArrayList<>();
         int numberOfRecords = recordsOnPage;
         if((list.size()-currentPage*recordsOnPage)<recordsOnPage) {
@@ -150,5 +131,5 @@ public class Form {
         }
         clear();
         studentTable.setItems(FXCollections.observableArrayList(page));
-    }
+    }*/
 }

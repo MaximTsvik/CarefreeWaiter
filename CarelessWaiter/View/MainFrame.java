@@ -1,7 +1,6 @@
 package View;
 
 import Controller.Controller;
-import Model.Student;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
@@ -37,13 +36,11 @@ public class MainFrame {
         root.setPadding(new Insets(50, 50, 40, 40));
 
         GridPane startovaya = new GridPane();
-
         Start start = new Start();
         start.startStart(startovaya);
         startovaya.setHgap(5);
         startovaya.setVgap(5);
         startovaya.setPadding(new Insets(30, 30, 30, 30));
-
 
        /* Button admin = new Button("Администратор");
         admin.setPrefSize(200,60);
@@ -52,7 +49,7 @@ public class MainFrame {
         Label  AdminOrWaiter = new Label("Выбери, кто ты, мразь: ");
         Stage stage1 = new Stage();*/
 
-       ToolBar tb = new ToolBar();
+      /* ToolBar tb = new ToolBar();
         tb.cursorProperty();
         Button load = new Button("Загрузка");
         load.setOnAction( e -> {
@@ -117,7 +114,7 @@ public class MainFrame {
         });
         menuF.getItems().addAll(admin2, waiter2);*/
 
-        Menu menuT = new Menu();
+        /*Menu menuT = new Menu();
         MenuItem menuAdd = new MenuItem("Официант");
         MenuItem menuSearch = new MenuItem("Админ");
         menuT.getItems().addAll(menuAdd, menuSearch);
@@ -145,7 +142,7 @@ public class MainFrame {
         HBox collectiveMemberBox = new HBox();
         collectiveMemberBox.setSpacing(20);
         collectiveMemberBox.getChildren().addAll(form.getPaneBox());
-        menushka.getChildren().addAll(tb);
+        menushka.getChildren().addAll(tb);*/
 
         Scene scene = new Scene(new Group(), 400, 150);
         ((Group)scene.getRoot()).getChildren().addAll(startovaya);
@@ -158,10 +155,9 @@ public class MainFrame {
 
     public void update() {
         form.clear();
-        form.setList(controller.getStudentBase());
-        form.getStudentTable().setItems(FXCollections.observableArrayList(controller.getStudentBase()));
+        form.setList(controller.getDishBase());
+        form.getDishTable().setItems(FXCollections.observableArrayList(controller.getDishBase()));
     }
-
 
     public void alertMessage(String text) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
