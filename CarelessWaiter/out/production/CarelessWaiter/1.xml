@@ -2,11 +2,13 @@
 <list>
 	<dish>
     	<name>Сваяк</name>
+    	<category>vodka</category>
     	<cost>2.5</cost>
     	<value>0.05</value>
     </dish>
 <dish>
-    	<name>Опа</name>
+    	<name>Финляндия</name>
+    	<category>vodka</category>
     	<cost>8</cost>
     	<value>0.05</value>
     </dish>

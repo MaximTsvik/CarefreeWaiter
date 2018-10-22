@@ -19,14 +19,14 @@ public class XMLDomParser {
     private Document document;
     private DishBase dishBase;
 
-    public void write(File file, DishBase studentBase) {
+    public void write(File file, DishBase dishBase) {
         this.file = file;
         this.dishBase = dishBase;
-       /* try {
+        try {
             document = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
             Element list = document.createElement("list");
 
-            for (int numOfDish = 0; numOfDish < studentBase.getDishBase().size(); numOfDish++) {
+            for (int numOfDish = 0; numOfDish < dishBase.getDishBase().size(); numOfDish++) {
                 Element dish = document.createElement("dish");
                 dish.setAttribute("id", numOfDish + "");
 
@@ -34,35 +34,19 @@ public class XMLDomParser {
                 name.setTextContent(dishBase.getDishBase().get(numOfDish).getName());
                 dish.appendChild(name);
 
-                Element fatherName = document.createElement("fatherName");
-                fatherName.setTextContent(studentBase.getStudentsBase().get(numOfStudent).getFatherName());
-                student.appendChild(fatherName);
+                Element category = document.createElement("category");
+                category.setTextContent(dishBase.getDishBase().get(numOfDish).getCategory());
+                dish.appendChild(category);
 
-                Element city = document.createElement("city");
-                city.setTextContent(studentBase.getStudentsBase().get(numOfStudent).getCity());
-                student.appendChild(city);
+                Element value = document.createElement("value");
+                value.setTextContent(String.valueOf(dishBase.getDishBase().get(numOfDish).getValue()));
+                dish.appendChild(value);
 
-                Element street = document.createElement("street");
-                street.setTextContent(studentBase.getStudentsBase().get(numOfStudent).getStreet());
-                student.appendChild(street);
+                Element cost = document.createElement("cost");
+                cost.setTextContent(String.valueOf(dishBase.getDishBase().get(numOfDish).getCost()));
+                dish.appendChild(cost);
 
-                Element house = document.createElement("house");
-                house.setTextContent(studentBase.getStudentsBase().get(numOfStudent).getHouse());
-                student.appendChild(house);
-
-                Element family = document.createElement("family");
-                family.setTextContent(String.valueOf(studentBase.getStudentsBase().get(numOfStudent).getFamily()));
-                student.appendChild(family);
-
-                Element area = document.createElement("area");
-                area.setTextContent(String.valueOf(studentBase.getStudentsBase().get(numOfStudent).getArea()));
-                student.appendChild(area);
-
-                Element perarea = document.createElement("perarea");
-                perarea.setTextContent(String.valueOf(studentBase.getStudentsBase().get(numOfStudent).getPerarea()));
-                student.appendChild(perarea);*/
-
-         /*       list.appendChild(dish);
+                list.appendChild(dish);
             }
 
             document.appendChild(list);
@@ -79,6 +63,6 @@ public class XMLDomParser {
         } catch (TransformerException ex) {
             String exText = ex.getMessage();
             dishBase.getController().alertMessage(exText);
-        }*/
+        }
     }
 }

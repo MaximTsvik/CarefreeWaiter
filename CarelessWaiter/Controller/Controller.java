@@ -44,7 +44,7 @@ public class Controller {
 
     public void fromFile(){
         dishBase.fromFile();
-//        mainFrame.update();
+        mainFrame.update();
     }
 
     /*public List<Dish> searchStudents (Dish searchStudent, String paramSearch) {

@@ -56,6 +56,10 @@ public class XMLSaxParser extends DefaultHandler {
             dish.setName(content.toString());
             return;
         }
+        if (currentElement.equals("category")) {
+            dish.setCategory(content.toString());
+            return;
+        }
         if (currentElement.equals("cost")) {
             if(content.toString().contains("\t") || content.toString().contains("\n")) return;
             dish.setCost(Double.parseDouble(content.toString()));

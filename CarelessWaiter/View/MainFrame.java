@@ -73,19 +73,7 @@ public class MainFrame {
 
       /* ToolBar tb = new ToolBar();
         tb.cursorProperty();*/
-        Button load = new Button("Загрузка");
-        load.setOnAction( e -> {
-            controller.getDishBase().clear();
-            Stage stage = new Stage();
-            FileChooser fileChooser = new FileChooser();
-            fileChooser.setTitle("Открытие");
-            fileChooser.setInitialDirectory(new java.io.File("./"));
-            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML", "*.xml"));
-            File file = fileChooser.showOpenDialog(stage);
-            controller.setFile(file);
-            controller.fromFile();
-//            update();
-        });
+
         /*Button save = new Button("Сохранение");
         save.setOnAction( e -> {
             Stage stage = new Stage();
@@ -167,7 +155,7 @@ public class MainFrame {
         menushka.getChildren().addAll(tb);*/
 
         Scene scene = new Scene(new Group(), 400, 150);
-        ((Group)scene.getRoot()).getChildren().addAll(StartPane, load);
+        ((Group)scene.getRoot()).getChildren().addAll(StartPane);
         Stage primaryStage = new Stage();
 
         primaryStage.setScene(scene);
@@ -176,7 +164,7 @@ public class MainFrame {
     }
 
     public void update() {
-     // form.clear();
+        form.clear();
         form.setList(controller.getDishBase());
         form.getDishTable().setItems(FXCollections.observableArrayList(controller.getDishBase()));
     }

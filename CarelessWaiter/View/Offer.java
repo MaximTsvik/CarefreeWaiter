@@ -22,11 +22,11 @@ import java.util.List;
 public class Offer {
 
     private Form form;
-    private MainFrame mainFrame;
+   // private MainFrame mainFrame;
     private Controller controller;
+    private Dish dish;
 
-    public Offer(MainFrame mainFrame, Controller controller) {
-        this.mainFrame = mainFrame;
+    public Offer(Controller controller) {
         this.controller = controller;
     }
 
@@ -35,7 +35,49 @@ public class Offer {
         Label label1 = new Label("Вы вошли как: официант");
         Button button1 = new Button("Вернуться к выбору столика");
 
+        Button load = new Button("Загрузка");
+        load.setOnAction( e -> {
+            controller.getDishBase().clear();
+            Stage stage = new Stage();
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Открытие");
+            fileChooser.setInitialDirectory(new java.io.File("./"));
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML", "*.xml"));
+            File file = fileChooser.showOpenDialog(stage);
+            controller.setFile(file);
+            controller.fromFile();
+            update();
+        });
+
+        Button download = new Button();
+        download.setOnAction(event -> {
+            Stage stage = new Stage();
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setInitialDirectory(new java.io.File("./"));
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML", "*.xml"));
+            File file = fileChooser.showSaveDialog(stage);
+            controller.toFile(file);
+        });
+
+       // for (Dish dish : saxParser.getDishList())
+
+
         Button vodka = new Button("Водка");
+
+        /*Button clac = new Button("клац");
+        clac.setOnAction(event -> {
+            for (; ;){
+                Button dishButton = new Button("" + dish.get);
+                table.setPrefSize(180,60);
+                root.getChildren().addAll(table);
+                root.setConstraints(table, columnIndex,rowIndex);
+                if (i % 4 == 0){ rowIndex++; columnIndex = 0; } else columnIndex++;
+                table.setOnAction(e -> {
+                    Offer offer = new Offer(this.mainFrame, this.controller);
+                    offer.startoffer(number);
+                });
+            }
+        });*/
 
 
 
@@ -312,10 +354,12 @@ public class Offer {
         Table.getChildren().addAll(form.getDishTable());
 
         GridPane root1 = new GridPane();
-        root1.getChildren().addAll(Table, label1,button1, label2, bar, kitchen, barbutton, kitchenbutton, totheoffer, predchek, vodkaPane, whiskeyPane, waterPane, beerPane, drinksPane, tekilaPane, cognagPane, coctailsPane, back);
+        root1.getChildren().addAll(Table, label1,button1, label2,load,download, bar, kitchen, barbutton, kitchenbutton, totheoffer, predchek, vodkaPane, whiskeyPane, waterPane, beerPane, drinksPane, tekilaPane, cognagPane, coctailsPane, back);
         root1.setPadding(new Insets(20, 20, 20, 100));
         root1.setVgap(25);
         root1.setHgap(25);
+        root1.setConstraints(load,0,0);
+        root1.setConstraints(download,3,4);
         root1.setConstraints(back,1,0);
         root1.setHalignment(back, HPos.RIGHT);
         root1.setConstraints(bar,1,2);
@@ -442,6 +486,12 @@ public class Offer {
         });
 
         stage.showAndWait();
+    }
+
+    public void update() {
+        form.clear();
+        form.setList(controller.getDishBase());
+        form.getDishTable().setItems(FXCollections.observableArrayList(controller.getDishBase()));
     }
 
 }

@@ -55,7 +55,7 @@ public class WaiterFrame {
                 root.setConstraints(table, columnIndex,rowIndex);
                 if (i % 4 == 0){ rowIndex++; columnIndex = 0; } else columnIndex++;
                 table.setOnAction(e -> {
-                    Offer offer = new Offer(this.mainFrame, this.controller);
+                    Offer offer = new Offer(this.controller);
                     offer.startoffer(number);
                 });
             }
