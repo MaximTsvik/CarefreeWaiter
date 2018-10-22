@@ -52,10 +52,10 @@ public class XMLSaxParser extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName) {
 
-        /*if (currentElement.equals("name")) {
+        if (currentElement.equals("name")) {
             dish.setName(content.toString());
             return;
-        }*/
+        }
         if (currentElement.equals("cost")) {
             if(content.toString().contains("\t") || content.toString().contains("\n")) return;
             dish.setCost(Double.parseDouble(content.toString()));
@@ -66,6 +66,7 @@ public class XMLSaxParser extends DefaultHandler {
             dish.setValue(Double.parseDouble(content.toString()));
             return;
         }
+
     }
     public void setBase(DishBase dishBase) {
         this.dishBase = dishBase;

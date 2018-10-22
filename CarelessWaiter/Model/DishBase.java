@@ -54,6 +54,9 @@ public class DishBase {
             parser.parse(file, saxParser);
             for (Dish dish : saxParser.getDishList()) {
                 controller.addDish(dish);
+                System.out.println(dish.getName());
+                System.out.println(dish.getCost());
+                System.out.println(dish.getValue());
             }
            // mainFrame.update();
         } catch (SAXException | ParserConfigurationException | IOException ex) {
