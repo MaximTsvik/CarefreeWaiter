@@ -18,7 +18,7 @@ public class Form {
 
     private TableView<Dish> dishTable;
     private VBox paneBox;
-    private List<Dish> list;
+    private List<Dish> dishList;
 
     public Form() {
        dishTable = new TableView<>();
@@ -110,13 +110,13 @@ public class Form {
     }
 
     public void clear() {
-        ObservableList<Dish> list = FXCollections.observableArrayList();
-        dishTable.setItems(list);
+        ObservableList<Dish> dishList = FXCollections.observableArrayList();
+        dishTable.setItems(dishList);
     }
 
     public void setList(List<Dish> dishList)
     {
-        this.list = dishList;
+        this.dishList = dishList;
     }
 
    /* public void setCurrentPage(int currentPage) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <list>
-    <student id="0">
+    /*<student id="0">
         <surname>Мизула</surname>
         <name>Кирилл</name>
         <fatherName>Олегович</fatherName>
@@ -549,5 +549,16 @@
         <family>4</family>
         <perarea>24.1</perarea>
         <area>96.4</area>
-    </student>
+    </student>*/
+    <dish>
+    	<name>Сваяк</name>
+    	<cost>2.5</cost>
+    	<value>0.05</value>
+    </dish>
+<dish>
+    	<name>Finlandiya</name>
+    	<cost>8</cost>
+    	<value>0.05</value>
+    </dish>
+
 </list>

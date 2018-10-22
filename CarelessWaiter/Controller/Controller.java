@@ -42,10 +42,10 @@ public class Controller {
         dishBase.toFile(file);
     }
 
-   /* public void fromFile(){
+    public void fromFile(){
         dishBase.fromFile();
-    //    mainFrame.update();
-    }*/
+//        mainFrame.update();
+    }
 
     /*public List<Dish> searchStudents (Dish searchStudent, String paramSearch) {
         List<Dish> searchStud = new ArrayList<>();
@@ -94,7 +94,7 @@ public class Controller {
         return searchStud;
     }*/
 
-    /*public void alertMessage(String text){
+    public void alertMessage(String text){
         mainFrame.alertMessage(text);
-    }*/
+    }
 }

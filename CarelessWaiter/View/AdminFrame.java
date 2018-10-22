@@ -13,12 +13,11 @@ import java.util.List;
 
 public class AdminFrame {
 
-    private MainFrame startovaya;
-    private Start start;
+    private MainFrame mainFrame;
     private Controller controller;
 
-    public AdminFrame(Start start, Controller controller) {
-        this.start = start;
+    public AdminFrame(MainFrame mainFrame, Controller controller) {
+        this.mainFrame = mainFrame;
         this.controller = controller;
     }
 

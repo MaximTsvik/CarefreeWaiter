@@ -2,6 +2,7 @@ package View;
 
 import Controller.Controller;
 import javafx.collections.FXCollections;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
@@ -35,12 +36,33 @@ public class MainFrame {
         root.setVgap(5);
         root.setPadding(new Insets(50, 50, 40, 40));
 
-        GridPane startovaya = new GridPane();
-        Start start = new Start();
-        start.startStart(startovaya);
-        startovaya.setHgap(5);
-        startovaya.setVgap(5);
-        startovaya.setPadding(new Insets(30, 30, 30, 30));
+        Label StartText = new Label("Ну и кто ты?");
+        Button admin = new Button("Администратор");
+        Button waiter = new Button("Официант");
+        root.getChildren().addAll(StartText, admin, waiter);
+
+        admin.setOnAction((event) -> {
+            AdminFrame adminFrame = new AdminFrame(this, this.controller);
+            adminFrame.start();
+        });
+
+        waiter.setOnAction((event) -> {
+            WaiterFrame waiterFrame = new WaiterFrame(this, this.controller);
+            waiterFrame.start();
+        });
+
+        root.setConstraints(StartText, 2, 0);
+        root.setHalignment(StartText, HPos.CENTER);
+        root.setConstraints(admin, 3, 1);
+        root.setHalignment(admin, HPos.LEFT);
+        root.setConstraints(waiter, 1, 1);
+        root.setHalignment(waiter, HPos.RIGHT);
+
+        GridPane StartPane = new GridPane();
+        StartPane.getChildren().addAll(StartText, admin, waiter);
+        StartPane.setHgap(5);
+        StartPane.setVgap(5);
+        StartPane.setPadding(new Insets(30, 30, 30, 30));
 
        /* Button admin = new Button("Администратор");
         admin.setPrefSize(200,60);
@@ -50,10 +72,10 @@ public class MainFrame {
         Stage stage1 = new Stage();*/
 
       /* ToolBar tb = new ToolBar();
-        tb.cursorProperty();
+        tb.cursorProperty();*/
         Button load = new Button("Загрузка");
         load.setOnAction( e -> {
-            controller.getStudentBase().clear();
+            controller.getDishBase().clear();
             Stage stage = new Stage();
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Открытие");
@@ -62,9 +84,9 @@ public class MainFrame {
             File file = fileChooser.showOpenDialog(stage);
             controller.setFile(file);
             controller.fromFile();
-            update();
+//            update();
         });
-        Button save = new Button("Сохранение");
+        /*Button save = new Button("Сохранение");
         save.setOnAction( e -> {
             Stage stage = new Stage();
             FileChooser fileChooser = new FileChooser();
@@ -145,7 +167,7 @@ public class MainFrame {
         menushka.getChildren().addAll(tb);*/
 
         Scene scene = new Scene(new Group(), 400, 150);
-        ((Group)scene.getRoot()).getChildren().addAll(startovaya);
+        ((Group)scene.getRoot()).getChildren().addAll(StartPane, load);
         Stage primaryStage = new Stage();
 
         primaryStage.setScene(scene);
@@ -154,7 +176,7 @@ public class MainFrame {
     }
 
     public void update() {
-        form.clear();
+     // form.clear();
         form.setList(controller.getDishBase());
         form.getDishTable().setItems(FXCollections.observableArrayList(controller.getDishBase()));
     }

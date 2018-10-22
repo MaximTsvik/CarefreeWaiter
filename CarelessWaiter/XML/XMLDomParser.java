@@ -22,11 +22,11 @@ public class XMLDomParser {
     public void write(File file, DishBase studentBase) {
         this.file = file;
         this.dishBase = dishBase;
-        /*try {
+       /* try {
             document = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
             Element list = document.createElement("list");
 
-           /* for (int numOfDish = 0; numOfDish < studentBase.getDishBase().size(); numOfDish++) {
+            for (int numOfDish = 0; numOfDish < studentBase.getDishBase().size(); numOfDish++) {
                 Element dish = document.createElement("dish");
                 dish.setAttribute("id", numOfDish + "");
 

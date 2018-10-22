@@ -34,7 +34,13 @@ public class Offer {
         Label label2 = new Label("Выбран столик: " + number);
         Label label1 = new Label("Вы вошли как: официант");
         Button button1 = new Button("Вернуться к выбору столика");
+
         Button vodka = new Button("Водка");
+
+
+
+
+
         Button whiskey = new Button("Виски");
         Button beer = new Button("Пиво");
         Button coctails = new Button("Коктейли");
@@ -97,6 +103,49 @@ public class Offer {
         Button borjomi = new Button("Боржоми");
         Button essentyki = new Button("Ессентуки");
 
+        //горячие блюда
+        Button newYork = new Button("Стейк New York");
+        Button pork = new Button("Корейка-гриль");
+        Button chikenGrill = new Button("Курица-гриль");
+        Button salmon = new Button("Форель-гриль");
+        Button porkShashlik = new Button("Шашлык из шеи");
+        Button chikenShashlik = new Button("Шашлык из курицы");
+        Button vegetables = new Button("Овощи-гриль");
+        Button potatoes = new Button("Картофель по-домашнему");
+
+        //холодные закуски
+        Button vegetablesNar = new Button("Овощная нарезка");
+        Button meatNar = new Button("Мясная нарезка");
+        Button underVodka = new Button("Закуска под-водку");
+        Button caprese = new Button("Капрезе");
+        Button sirtaki = new Button("Сиртаки");
+        Button lemon = new Button("Лимон");
+        Button cheeseNar = new Button("Сырная палитра");
+        Button soleniya = new Button("Ассорти из солений");
+
+        //салаты
+        Button cezar = new Button("Цезарь");
+        Button greece = new Button("Греческий");
+        Button olivie = new Button("Оливье");
+        Button carrot = new Button("Морковь пикантная");
+
+        //супы
+        Button mushroomSoup = new Button("Крем-суп грибной");
+        Button solyankaSoup = new Button("Солянка");
+        Button schi = new Button("Щи");
+        Button rossolnik = new Button("Россольник");
+
+        //десерты
+        Button fruitNar = new Button("Фруктовая палитра");
+        Button iceCream = new Button("Мороженое");
+        Button cheeseCake = new Button("Чизкейк");
+        Button chocolateCake = new Button("Шоколадный торт");
+
+
+
+
+
+
         Button barbutton = new Button("Бар");
         Button kitchenbutton = new Button("Кухня");
 
@@ -120,8 +169,6 @@ public class Offer {
         deserts.setPrefSize(180,50);
         totheoffer.setPrefSize(180,50);
         predchek.setPrefSize(180,50);
-
-        GridPane root1 = new GridPane();
 
         GridPane vodkaPane = new GridPane();
         vodkaPane.getChildren().addAll(svayak, finka, absolut, smirnoff);
@@ -264,6 +311,7 @@ public class Offer {
         Group Table = new Group();
         Table.getChildren().addAll(form.getDishTable());
 
+        GridPane root1 = new GridPane();
         root1.getChildren().addAll(Table, label1,button1, label2, bar, kitchen, barbutton, kitchenbutton, totheoffer, predchek, vodkaPane, whiskeyPane, waterPane, beerPane, drinksPane, tekilaPane, cognagPane, coctailsPane, back);
         root1.setPadding(new Insets(20, 20, 20, 100));
         root1.setVgap(25);
@@ -337,6 +385,9 @@ public class Offer {
             bar.setVisible(false);
             kitchen.setVisible(false);
             tekilaPane.setVisible(true);
+        });
+        cola.setOnAction(event -> {
+            System.out.println();
         });
         drinks.setOnAction(event -> {
             bar.setVisible(false);

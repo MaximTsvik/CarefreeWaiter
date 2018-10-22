@@ -1,6 +1,7 @@
 package Model;
 
 import Controller.Controller;
+import View.MainFrame;
 import XML.XMLDomParser;
 import XML.XMLSaxParser;
 import org.xml.sax.SAXException;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DishBase {
+    private MainFrame mainFrame;
     private Controller controller;
     private List<Dish> dishBase = new ArrayList();
     private File file;
@@ -43,19 +45,21 @@ public class DishBase {
         domParser.write(file, this);
     }
 
-    /*public void fromFile() {
+    public void fromFile() {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         XMLSaxParser saxParser = new XMLSaxParser();
-        //saxParser.setBase(this);
+        saxParser.setBase(this);
         try {
             SAXParser parser = factory.newSAXParser();
             parser.parse(file, saxParser);
-            for (Dish dish : saxParser.getStudentList()) {
+            for (Dish dish : saxParser.getDishList()) {
                 controller.addDish(dish);
             }
-           // controller.getMainFrame().update();
+           // mainFrame.update();
         } catch (SAXException | ParserConfigurationException | IOException ex) {
             String exText = ex.getMessage();
             controller.alertMessage(exText);
-        }*/
+        }
+    }
+
     }
