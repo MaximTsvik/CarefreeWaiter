@@ -46,7 +46,6 @@ public class DishBase {
     }
 
     public void fromFile() {
-        MainFrame mainFrame = new MainFrame(this.controller);
         SAXParserFactory factory = SAXParserFactory.newInstance();
         XMLSaxParser saxParser = new XMLSaxParser();
         saxParser.setBase(this);

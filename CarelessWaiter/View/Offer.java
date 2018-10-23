@@ -36,6 +36,12 @@ public class Offer {
         Button button1 = new Button("Вернуться к выбору столика");
 
         Button load = new Button("Загрузка");
+        GridPane vodkaPane = new GridPane();
+        vodkaPane.setHgap(30);
+        vodkaPane.setVgap(30);
+        vodkaPane.setVisible(false);
+        Button vodka = new Button("Водка");
+
         load.setOnAction( e -> {
             controller.getDishBase().clear();
             Stage stage = new Stage();
@@ -49,8 +55,9 @@ public class Offer {
             update();
         });
 
-        Button download = new Button();
-        download.setOnAction(event -> {
+
+        Button upload = new Button("Сохранить");
+        upload.setOnAction(event -> {
             Stage stage = new Stage();
             FileChooser fileChooser = new FileChooser();
             fileChooser.setInitialDirectory(new java.io.File("./"));
@@ -59,30 +66,25 @@ public class Offer {
             controller.toFile(file);
         });
 
-       // for (Dish dish : saxParser.getDishList())
 
 
-        Button vodka = new Button("Водка");
+        Button test = new Button("Меню");
+        test.setOnAction(event -> {
+            int columnIndex=0, rowIndex=0, i=0;
+            for (Dish dish : controller.getDishBase()){
 
-        /*Button clac = new Button("клац");
-        clac.setOnAction(event -> {
-            for (; ;){
-                Button dishButton = new Button("" + dish.get);
-                table.setPrefSize(180,60);
-                root.getChildren().addAll(table);
-                root.setConstraints(table, columnIndex,rowIndex);
-                if (i % 4 == 0){ rowIndex++; columnIndex = 0; } else columnIndex++;
-                table.setOnAction(e -> {
-                    Offer offer = new Offer(this.mainFrame, this.controller);
-                    offer.startoffer(number);
-                });
+                if (dish.getCategory().equals("vodka")){
+                    i++;
+                    Button vodkaButton = new Button(dish.getName());
+                    vodkaButton.setPrefSize(120,50);
+                    vodkaPane.getChildren().addAll(vodkaButton);
+                    vodkaPane.setConstraints(vodkaButton, columnIndex, rowIndex);
+                    if (i % 4 == 0){ rowIndex++; columnIndex = 0; i=0; } else columnIndex++;
+                }
+
             }
-        });*/
-
-
-
-
-
+        });
+        
         Button whiskey = new Button("Виски");
         Button beer = new Button("Пиво");
         Button coctails = new Button("Коктейли");
@@ -98,10 +100,10 @@ public class Offer {
         Button back = new Button("Назад");
 
         //водка
-        Button svayak = new Button("Сваяк");
+        /*Button svayak = new Button("Сваяк");
         Button finka = new Button("Finlandiya");
         Button absolut = new Button("Absolut");
-        Button smirnoff = new Button("Smirnoff");
+        Button smirnoff = new Button("Smirnoff");*/
 
         //вискарь
         Button jameson = new Button("Jameson");
@@ -212,8 +214,8 @@ public class Offer {
         totheoffer.setPrefSize(180,50);
         predchek.setPrefSize(180,50);
 
-        GridPane vodkaPane = new GridPane();
-        vodkaPane.getChildren().addAll(svayak, finka, absolut, smirnoff);
+
+        /*vodkaPane.getChildren().addAll(svayak, finka, absolut, smirnoff);
         vodkaPane.setConstraints(svayak, 0,0);
         vodkaPane.setConstraints(finka, 1,0);
         vodkaPane.setConstraints(absolut, 2,0);
@@ -224,7 +226,7 @@ public class Offer {
         smirnoff.setPrefSize(120,50);
         vodkaPane.setHgap(30);
         vodkaPane.setVgap(30);
-        vodkaPane.setVisible(false);
+        vodkaPane.setVisible(false);*/
 
         GridPane whiskeyPane = new GridPane();
         whiskeyPane.getChildren().addAll(jameson, jackDaniels, jimBeam, grants);
@@ -354,12 +356,13 @@ public class Offer {
         Table.getChildren().addAll(form.getDishTable());
 
         GridPane root1 = new GridPane();
-        root1.getChildren().addAll(Table, label1,button1, label2,load,download, bar, kitchen, barbutton, kitchenbutton, totheoffer, predchek, vodkaPane, whiskeyPane, waterPane, beerPane, drinksPane, tekilaPane, cognagPane, coctailsPane, back);
+        root1.getChildren().addAll(Table, label1,button1, label2,load,upload,test, bar, kitchen, barbutton, kitchenbutton, totheoffer, predchek, vodkaPane, whiskeyPane, waterPane, beerPane, drinksPane, tekilaPane, cognagPane, coctailsPane, back);
         root1.setPadding(new Insets(20, 20, 20, 100));
         root1.setVgap(25);
         root1.setHgap(25);
         root1.setConstraints(load,0,0);
-        root1.setConstraints(download,3,4);
+        root1.setConstraints(test,4,4);
+        root1.setConstraints(upload,3,4);
         root1.setConstraints(back,1,0);
         root1.setHalignment(back, HPos.RIGHT);
         root1.setConstraints(bar,1,2);
@@ -443,7 +446,7 @@ public class Offer {
             kitchen.setVisible(false);
             waterPane.setVisible(true);
         });
-        svayak.setOnAction(event -> {
+        //svayak.setOnAction(event -> {
             /*AddFrame addFrame = new AddFrame(this.mainFrame, this.controller);
             AddFrame.sta
             /*Dish svayak1 = new Dish();
@@ -454,7 +457,7 @@ public class Offer {
             form.clear();
             form.setList(controller.getDishBase());
             form.getDishTable().setItems(FXCollections.observableArrayList(controller.getDishBase()));*/
-        });
+        //});
         kitchenbutton.setOnAction(e ->{
             bar.setVisible(false);
             kitchen.setVisible(true);
