@@ -46,12 +46,6 @@ public class DishBase {
         domParser.write(file, this);
     }
 
-    public void toFile1(File file) {
-        XMLDomParser domParser = new XMLDomParser();
-        domParser.write(file, this);
-    }
-
-
     public void fromFile() {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         XMLSaxParser saxParser = new XMLSaxParser();

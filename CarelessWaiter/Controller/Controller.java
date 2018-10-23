@@ -2,6 +2,8 @@ package Controller;
 
 import Model.Dish;
 import Model.DishBase;
+import Model.Table;
+import Model.TableBase;
 import View.Form;
 import View.MainFrame;
 import View.Offer;
@@ -15,6 +17,7 @@ public class Controller {
     private Offer offer;
     private MainFrame mainFrame;
     private DishBase dishBase;
+    private TableBase tableBase;
 
     public Controller() {
         mainFrame = new MainFrame(this);
@@ -25,6 +28,10 @@ public class Controller {
     /*public void removeStudent(List<Dish> stud) {
         getDishBase().removeAll(dis);
     }*/
+
+    public List<Table> getAllTables(){
+        return tableBase.getTableBase();
+    }
 
     public void addDish(Dish dish) {
         dishBase.add(dish);

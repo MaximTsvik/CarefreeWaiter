@@ -1,6 +1,7 @@
 package View;
 
 import Controller.Controller;
+import Model.Table;
 import javafx.collections.FXCollections;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -45,7 +46,7 @@ public class WaiterFrame {
         root.setConstraints(countField,1,1);
         root.setConstraints(clac,2,1);
         clac.setOnAction(event -> {
-            //List<Table> tables = restoranController.getAllTables();
+            //List<Table> tables = Controller.getAllTables();
             //for(Table table: tables){
             //   if(table.isFree(){
             //       Button tableView = new Button("free")
