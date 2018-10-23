@@ -47,6 +47,16 @@ public class Controller {
         offer.update();
     }
 
+    public List<Dish> chosedDish (Dish dish){
+        List<Dish> searchDish = new ArrayList<>();
+        List<Dish> allDish = new ArrayList<>();
+
+        for (Dish dish1 : allDish){
+            searchDish.add(dish1);
+        }
+        return searchDish;
+    }
+
     /*public List<Dish> searchStudents (Dish searchStudent, String paramSearch) {
         List<Dish> searchStud = new ArrayList<>();
         List<Dish> allStudents = getStudentBase();

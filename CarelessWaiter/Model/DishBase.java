@@ -18,6 +18,7 @@ public class DishBase {
     private MainFrame mainFrame;
     private Controller controller;
     private List<Dish> dishBase = new ArrayList();
+    //private List<Dish> dishes = new ArrayList();
     private File file;
 
     public DishBase(Controller controller) {
@@ -44,6 +45,12 @@ public class DishBase {
         XMLDomParser domParser = new XMLDomParser();
         domParser.write(file, this);
     }
+
+    public void toFile1(File file) {
+        XMLDomParser domParser = new XMLDomParser();
+        domParser.write(file, this);
+    }
+
 
     public void fromFile() {
         SAXParserFactory factory = SAXParserFactory.newInstance();

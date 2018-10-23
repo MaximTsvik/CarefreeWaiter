@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 
 import javax.swing.plaf.metal.MetalBorders;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Offer {
@@ -34,13 +35,115 @@ public class Offer {
         Label label2 = new Label("Выбран столик: " + number);
         Label label1 = new Label("Вы вошли как: официант");
         Button button1 = new Button("Вернуться к выбору столика");
+        form = new Form();
+        Group Table = new Group();
+        Table.getChildren().addAll(form.getDishTable());
 
         Button load = new Button("Загрузка");
+
         GridPane vodkaPane = new GridPane();
         vodkaPane.setHgap(30);
         vodkaPane.setVgap(30);
         vodkaPane.setVisible(false);
         Button vodka = new Button("Водка");
+
+        GridPane whiskeyPane = new GridPane();
+        Button whiskey = new Button("Виски");
+        whiskeyPane.setHgap(30);
+        whiskeyPane.setVgap(30);
+        whiskeyPane.setVisible(false);
+
+        GridPane coctailsPane = new GridPane();
+        coctailsPane.setHgap(30);
+        coctailsPane.setVgap(30);
+        coctailsPane.setVisible(false);
+
+        GridPane beerPane = new GridPane();
+        beerPane.setHgap(30);
+        beerPane.setVgap(30);
+        beerPane.setVisible(false);
+
+        GridPane cognagPane = new GridPane();
+        cognagPane.setHgap(30);
+        cognagPane.setVgap(30);
+        cognagPane.setVisible(false);
+
+        GridPane tekilaPane = new GridPane();
+        tekilaPane.setHgap(30);
+        tekilaPane.setVgap(30);
+        tekilaPane.setVisible(false);
+
+        GridPane drinksPane = new GridPane();
+        drinksPane.setHgap(30);
+        drinksPane.setVgap(30);
+        drinksPane.setVisible(false);
+
+        GridPane waterPane = new GridPane();
+        waterPane.setHgap(30);
+        waterPane.setVgap(30);
+        waterPane.setVisible(false);
+
+        Button beer = new Button("Пиво");
+        Button coctails = new Button("Коктейли");
+        Button cognag = new Button("Коньяк");
+        Button tekila = new Button("Текила");
+        Button drinks = new Button("Напитки");
+        Button water = new Button("Вода");
+        Button hot = new Button("Горячие блюда");
+        Button salats = new Button("Салаты");
+        Button cold = new Button("Холодные закуски");
+        Button soups = new Button("Супы");
+        Button deserts = new Button("Десерты");
+        Button back = new Button("Назад");
+
+        Button barbutton = new Button("Бар");
+        Button kitchenbutton = new Button("Кухня");
+
+        Button predchek = new Button("Предчек");
+        Button totheoffer = new Button("Отправить на заказ");
+
+        vodka.setPrefSize(120,50);
+        whiskey.setPrefSize(120,50);
+        beer.setPrefSize(120,50);
+        coctails.setPrefSize(120,50);
+        cognag.setPrefSize(120,50);
+        tekila.setPrefSize(120,50);
+        drinks.setPrefSize(120,50);
+        water.setPrefSize(120,50);
+        barbutton.setPrefSize(180,50);
+        kitchenbutton.setPrefSize(180,50);
+        hot.setPrefSize(180,50);
+        cold.setPrefSize(180,50);
+        salats.setPrefSize(180,50);
+        soups.setPrefSize(180,50);
+        deserts.setPrefSize(180,50);
+        totheoffer.setPrefSize(180,50);
+        predchek.setPrefSize(180,50);
+
+        GridPane bar = new GridPane();
+        bar.setVgap(30);
+        bar.setHgap(30);
+        bar.setVisible(true);
+        bar.getChildren().addAll(vodka, whiskey, beer, coctails, cognag, tekila, drinks, water);
+        bar.setConstraints(vodka, 0,0);
+        bar.setConstraints(whiskey, 1,0);
+        bar.setConstraints(beer, 2,0);
+        bar.setConstraints(coctails, 3,0);
+        bar.setConstraints(cognag, 0,1);
+        bar.setConstraints(tekila, 1,1);
+        bar.setConstraints(drinks, 2,1);
+        bar.setConstraints(water, 3,1);
+
+        GridPane kitchen = new GridPane();
+        kitchen.getChildren().addAll(hot, cold, salats, soups, deserts);
+        kitchen.setConstraints(hot, 0,0);
+        kitchen.setConstraints(cold, 1,0);
+        kitchen.setConstraints(salats, 0,1);
+        kitchen.setConstraints(soups, 1,1);
+        kitchen.setConstraints(deserts, 2,0);
+        kitchen.setVgap(30);
+        kitchen.setHgap(30);
+        kitchen.setVisible(false);
 
         load.setOnAction( e -> {
             controller.getDishBase().clear();
@@ -55,7 +158,6 @@ public class Offer {
             update();
         });
 
-
         Button upload = new Button("Сохранить");
         upload.setOnAction(event -> {
             Stage stage = new Stage();
@@ -66,11 +168,10 @@ public class Offer {
             controller.toFile(file);
         });
 
-
-
         Button test = new Button("Меню");
         test.setOnAction(event -> {
             int columnIndex=0, rowIndex=0, i=0;
+
             for (Dish dish : controller.getDishBase()){
 
                 if (dish.getCategory().equals("vodka")){
@@ -80,24 +181,27 @@ public class Offer {
                     vodkaPane.getChildren().addAll(vodkaButton);
                     vodkaPane.setConstraints(vodkaButton, columnIndex, rowIndex);
                     if (i % 4 == 0){ rowIndex++; columnIndex = 0; i=0; } else columnIndex++;
+                    vodkaButton.setOnAction(event1 -> {
+                        List<Dish> resultOfOffer = new ArrayList<>();//controller.chosedDish(dish);
+                        form.addToList(dish, resultOfOffer);
+                    });
                 }
 
+                if (dish.getCategory().equals("whiskey")){
+                    i++;
+                    Button whiskeyButton = new Button(dish.getName());
+                    whiskeyButton.setPrefSize(120,50);
+                    whiskeyPane.getChildren().addAll(whiskeyButton);
+                    whiskeyPane.setConstraints(whiskeyButton, columnIndex, rowIndex);
+                    if (i % 4 == 0){ rowIndex++; columnIndex = 0; i=0; } else columnIndex++;
+                    whiskeyButton.setOnAction(event1 -> {
+                        List<Dish> resultOfSearch = controller.chosedDish(dish);
+                        form.setList(resultOfSearch);
+                        form.getDishTable().setItems(FXCollections.observableArrayList(resultOfSearch));
+                    });
+                }
             }
         });
-        
-        Button whiskey = new Button("Виски");
-        Button beer = new Button("Пиво");
-        Button coctails = new Button("Коктейли");
-        Button cognag = new Button("Коньяк");
-        Button tekila = new Button("Текила");
-        Button drinks = new Button("Напитки");
-        Button water = new Button("Вода");
-        Button hot = new Button("Горячие блюда");
-        Button salats = new Button("Салаты");
-        Button cold = new Button("Холодные закуски");
-        Button soups = new Button("Супы");
-        Button deserts = new Button("Десерты");
-        Button back = new Button("Назад");
 
         //водка
         /*Button svayak = new Button("Сваяк");
@@ -106,10 +210,10 @@ public class Offer {
         Button smirnoff = new Button("Smirnoff");*/
 
         //вискарь
-        Button jameson = new Button("Jameson");
+        /*Button jameson = new Button("Jameson");
         Button jimBeam = new Button("JimBeam");
         Button jackDaniels = new Button("JackDaniels");
-        Button grants = new Button("Grants");
+        Button grants = new Button("Grants");*/
 
         //пиво
         Button heineken = new Button("Heineken");
@@ -185,36 +289,6 @@ public class Offer {
         Button cheeseCake = new Button("Чизкейк");
         Button chocolateCake = new Button("Шоколадный торт");
 
-
-
-
-
-
-        Button barbutton = new Button("Бар");
-        Button kitchenbutton = new Button("Кухня");
-
-        Button predchek = new Button("Предчек");
-        Button totheoffer = new Button("Отправить на заказ");
-
-        vodka.setPrefSize(120,50);
-        whiskey.setPrefSize(120,50);
-        beer.setPrefSize(120,50);
-        coctails.setPrefSize(120,50);
-        cognag.setPrefSize(120,50);
-        tekila.setPrefSize(120,50);
-        drinks.setPrefSize(120,50);
-        water.setPrefSize(120,50);
-        barbutton.setPrefSize(180,50);
-        kitchenbutton.setPrefSize(180,50);
-        hot.setPrefSize(180,50);
-        cold.setPrefSize(180,50);
-        salats.setPrefSize(180,50);
-        soups.setPrefSize(180,50);
-        deserts.setPrefSize(180,50);
-        totheoffer.setPrefSize(180,50);
-        predchek.setPrefSize(180,50);
-
-
         /*vodkaPane.getChildren().addAll(svayak, finka, absolut, smirnoff);
         vodkaPane.setConstraints(svayak, 0,0);
         vodkaPane.setConstraints(finka, 1,0);
@@ -228,8 +302,7 @@ public class Offer {
         vodkaPane.setVgap(30);
         vodkaPane.setVisible(false);*/
 
-        GridPane whiskeyPane = new GridPane();
-        whiskeyPane.getChildren().addAll(jameson, jackDaniels, jimBeam, grants);
+        /*whiskeyPane.getChildren().addAll(jameson, jackDaniels, jimBeam, grants);
         whiskeyPane.setConstraints(jameson, 0,0);
         whiskeyPane.setConstraints(jackDaniels, 1,0);
         whiskeyPane.setConstraints(jimBeam, 2,0);
@@ -237,12 +310,10 @@ public class Offer {
         jameson.setPrefSize(120,50);
         jackDaniels.setPrefSize(120,50);
         jimBeam.setPrefSize(120,50);
-        grants.setPrefSize(120,50);
-        whiskeyPane.setHgap(30);
-        whiskeyPane.setVgap(30);
-        whiskeyPane.setVisible(false);
+        grants.setPrefSize(120,50);*/
 
-        GridPane beerPane = new GridPane();
+
+
         beerPane.getChildren().addAll(heineken, bobrov, zlatyBazant, zhiguli);
         beerPane.setConstraints(heineken, 0,0);
         beerPane.setConstraints(bobrov, 1,0);
@@ -252,11 +323,7 @@ public class Offer {
         bobrov.setPrefSize(120,50);
         zlatyBazant.setPrefSize(120,50);
         zhiguli.setPrefSize(120,50);
-        beerPane.setHgap(30);
-        beerPane.setVgap(30);
-        beerPane.setVisible(false);
 
-        GridPane coctailsPane = new GridPane();
         coctailsPane.getChildren().addAll(longAilend, b52, mohito, pinaKolada);
         coctailsPane.setConstraints(longAilend, 0,0);
         coctailsPane.setConstraints(b52, 1,0);
@@ -266,11 +333,8 @@ public class Offer {
         b52.setPrefSize(120,50);
         mohito.setPrefSize(120,50);
         pinaKolada.setPrefSize(120,50);
-        coctailsPane.setHgap(30);
-        coctailsPane.setVgap(30);
-        coctailsPane.setVisible(false);
 
-        GridPane cognagPane = new GridPane();
+
         cognagPane.getChildren().addAll(moldova5, metaxa7, hennesey5, ararat5);
         cognagPane.setConstraints(moldova5, 0,0);
         cognagPane.setConstraints(metaxa7, 1,0);
@@ -280,11 +344,8 @@ public class Offer {
         metaxa7.setPrefSize(120,50);
         hennesey5.setPrefSize(120,50);
         ararat5.setPrefSize(120,50);
-        cognagPane.setHgap(30);
-        cognagPane.setVgap(30);
-        cognagPane.setVisible(false);
 
-        GridPane tekilaPane = new GridPane();
+
         tekilaPane.getChildren().addAll(joseCuervoGold, joseCuervoSelver, olmecaBlanco, olmecaGold);
         tekilaPane.setConstraints(joseCuervoGold, 0,0);
         tekilaPane.setConstraints(joseCuervoSelver, 1,0);
@@ -294,11 +355,8 @@ public class Offer {
         joseCuervoSelver.setPrefSize(120,50);
         olmecaBlanco.setPrefSize(120,50);
         olmecaGold.setPrefSize(120,50);
-        tekilaPane.setHgap(30);
-        tekilaPane.setVgap(30);
-        tekilaPane.setVisible(false);
 
-        GridPane drinksPane = new GridPane();
+
         drinksPane.getChildren().addAll(cola, sprite, fanta, shweppes);
         drinksPane.setConstraints(cola, 0,0);
         drinksPane.setConstraints(sprite, 1,0);
@@ -308,11 +366,8 @@ public class Offer {
         sprite.setPrefSize(120,50);
         fanta.setPrefSize(120,50);
         shweppes.setPrefSize(120,50);
-        drinksPane.setHgap(30);
-        drinksPane.setVgap(30);
-        drinksPane.setVisible(false);
 
-        GridPane waterPane = new GridPane();
+
         waterPane.getChildren().addAll(bonaquaNo, bonaquaYes, essentyki, borjomi);
         waterPane.setConstraints(bonaquaYes, 0,0);
         waterPane.setConstraints(bonaquaNo, 1,0);
@@ -322,38 +377,6 @@ public class Offer {
         bonaquaNo.setPrefSize(120,50);
         borjomi.setPrefSize(120,50);
         essentyki.setPrefSize(120,50);
-        waterPane.setHgap(30);
-        waterPane.setVgap(30);
-        waterPane.setVisible(false);
-
-        GridPane bar = new GridPane();
-        bar.getChildren().addAll(vodka, whiskey, beer, coctails, cognag, tekila, drinks, water);
-        bar.setConstraints(vodka, 0,0);
-        bar.setConstraints(whiskey, 1,0);
-        bar.setConstraints(beer, 2,0);
-        bar.setConstraints(coctails, 3,0);
-        bar.setConstraints(cognag, 0,1);
-        bar.setConstraints(tekila, 1,1);
-        bar.setConstraints(drinks, 2,1);
-        bar.setConstraints(water, 3,1);
-        bar.setVgap(30);
-        bar.setHgap(30);
-        bar.setVisible(true);
-
-        GridPane kitchen = new GridPane();
-        kitchen.getChildren().addAll(hot, cold, salats, soups, deserts);
-        kitchen.setConstraints(hot, 0,0);
-        kitchen.setConstraints(cold, 1,0);
-        kitchen.setConstraints(salats, 0,1);
-        kitchen.setConstraints(soups, 1,1);
-        kitchen.setConstraints(deserts, 2,0);
-        kitchen.setVgap(30);
-        kitchen.setHgap(30);
-        kitchen.setVisible(false);
-
-        form = new Form();
-        Group Table = new Group();
-        Table.getChildren().addAll(form.getDishTable());
 
         GridPane root1 = new GridPane();
         root1.getChildren().addAll(Table, label1,button1, label2,load,upload,test, bar, kitchen, barbutton, kitchenbutton, totheoffer, predchek, vodkaPane, whiskeyPane, waterPane, beerPane, drinksPane, tekilaPane, cognagPane, coctailsPane, back);
@@ -389,7 +412,7 @@ public class Offer {
         root1.setValignment(label2, VPos.TOP);
         root1.setConstraints(predchek, 0,4);
 
-        Scene scene = new Scene(root1, 1050, 600);
+        Scene scene = new Scene(root1, 1300, 650);
         Stage stage = new Stage();
         back.setOnAction(event -> {
             bar.setVisible(true);

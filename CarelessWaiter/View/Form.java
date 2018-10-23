@@ -119,6 +119,10 @@ public class Form {
         this.dishList = dishList;
     }
 
+    public void addToList (Dish dish, List<Dish> dishList){
+        this.dishList.add(dish);
+    }
+
    /* public void setCurrentPage(int currentPage) {
         List<Student> page = new ArrayList<>();
         int numberOfRecords = recordsOnPage;

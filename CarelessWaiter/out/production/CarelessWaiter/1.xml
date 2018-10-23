@@ -7,9 +7,45 @@
     	<value>0.05</value>
     </dish>
 <dish>
-    	<name>Финляндия</name>
+    	<name>Finlandia</name>
     	<category>vodka</category>
     	<cost>8</cost>
+    	<value>0.05</value>
+    </dish>
+    <dish>
+    	<name>Absolut</name>
+    	<category>vodka</category>
+    	<cost>7</cost>
+    	<value>0.05</value>
+    </dish>
+    <dish>
+    	<name>Smirnoff</name>
+    	<category>vodka</category>
+    	<cost>7</cost>
+    	<value>0.05</value>
+    </dish>
+    <dish>
+    	<name>Jameson</name>
+    	<category>whiskey</category>
+    	<cost>10</cost>
+    	<value>0.05</value>
+    </dish>
+    <dish>
+    	<name>Jim Beam</name>
+    	<category>whiskey</category>
+    	<cost>6</cost>
+    	<value>0.05</value>
+    </dish>
+    <dish>
+    	<name>Jack Danies</name>
+    	<category>whiskey</category>
+    	<cost>9</cost>
+    	<value>0.05</value>
+    </dish>
+    <dish>
+    	<name>Grants</name>
+    	<category>whiskey</category>
+    	<cost>5</cost>
     	<value>0.05</value>
     </dish>
   </list>
