@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<list>
+    <student id="0">
+        <surname>Мизула</surname>
+        <name>Кирилл</name>
+        <fatherName>Олегович</fatherName>
+        <family>2</family>
+        <city>Минск</city>
+        <street>Матусевича</street>
+        <house>50</house>
+        <perarea>25.2</perarea>
+        <area>50.4</area>
+    </student>
+    <student id="1">
+        <surname>Чеботарь</surname>
+        <name>Вадим</name>
+        <fatherName>Викторович</fatherName>
+        <city>Минск</city>
+        <street>Каменногорская</street>
+        <house>32</house>
+        <family>2</family>
+        <perarea>30.45</perarea>
+        <area>60.9</area>
+    </student>
+    <student id="2">
+        <surname>Коронец</surname>
+        <name>Максим</name>
+        <fatherName>Иванович</fatherName>
+        <city>Минск</city>
+        <street>Коласа</street>
+        <house>76</house>
+        <family>3</family>
+        <perarea>14.0</perarea>
+        <area>42.0</area>
+    </student>
+    <student id="3">
+        <surname>Кефирович</surname>
+        <name>Матвей</name>
+        <fatherName>Артемович</fatherName>
+        <city>Минск</city>
+        <street>Мкадская</street>
+        <house>198</house>
+        <family>1</family>
+        <perarea>35</perarea>
+        <area>35</area>
+    </student>
+    <student id="4">
+        <surname>Парфенов</surname>
+        <name>Илья</name>
+        <fatherName>Олегович</fatherName>
+        <city>Брест</city>
+        <street>Слонимская</street>
+        <house>13</house>
+        <family>3</family>
+        <perarea>12.1</perarea>
+        <area>42.3</area>
+    </student>
+      <student id="5">
+        <surname>Рыжевич</surname>
+        <name>Степан</name>
+        <fatherName>Олегович</fatherName>
+        <city>Минск</city>
+        <street>Дзержинская</street>
+        <house>95</house>
+        <family>1</family>
+        <perarea>13.2</perarea>
+        <area>13.2</area>
+    </student>
+    <student id="6">
+        <surname>Лавринович</surname>
+        <name>Яна</name>
+        <fatherName>Геннадьевна</fatherName>
+        <city>Минск</city>
+        <street>Веселая</street>
+        <house>56</house>
+        <family>3</family>
+        <area>39.2</area>
+        <perarea>13.07</perarea>
+    </student>
+    <student id="7">
+        <surname>Борисов</surname>
+        <name>Анатолий</name>
+        <fatherName>Сергеевич</fatherName>
+        <city>Санкт-Петербург</city>
+        <street>Невская</street>
+        <house>111</house>
+        <family>3</family>
+        <area>34.4</area>
+        <perarea>11.5</perarea>
+    </student>
+    <student id="8">
+        <surname>Аблухович</surname>
+        <name>Жанна</name>
+        <fatherName>Петровна</fatherName>
+        <city>Минск</city>
+        <street>Столичная</street>
+        <house>10</house>
+        <family>5</family>
+        <area>75</area>
+        <perarea>15</perarea>
+    </student>
+    <student id="9">
+        <surname>Коневега</surname>
+        <name>Евгений</name>
+        <fatherName>Владимирович</fatherName>
+        <city>Минск</city>
+        <street>Дзержинская</street>
+        <house>95</house>
+        <family>2</family>
+        <area>30</area>
+        <perarea>15</perarea>
+    </student>
+    <student id="10">
+        <surname>Цвикевич</surname>
+        <name>Николай</name>
+        <fatherName>Владимирович</fatherName>
+        <city>Слоним</city>
+        <street>4-ый переезд</street>
+        <house>7</house>
+        <family>2</family>
+        <area>50</area>
+        <perarea>25</perarea>
+    </student>
+    <student id="11">
+        <surname>Цвикевич</surname>
+        <name>Наталья</name>
+        <fatherName>Николаевна</fatherName>
+		<city>Слоним</city>
+        <street>4-ый переезд</street>
+        <house>7</house>        
+        <family>2</family>
+        <area>50</area>
+        <perarea>25</perarea>
+    </student>
+    <student id="12">
+        <surname>Пышкин</surname>
+        <name>Капитон</name>
+        <fatherName>Николаевич</fatherName>
+        <city>Минск</city>
+        <street>Пушкинская</street>
+        <house>54</house>
+        <family>3</family>
+        <area>60.6</area>
+        <perarea>20.2</perarea>
+    </student>
+    <student id="13">
+        <surname>Кахтавая</surname>
+        <name>Ксения</name>
+        <fatherName>Адольфовна</fatherName>
+        <city>Минск</city>
+        <street>Жировичская</street>
+        <house>90</house>
+        <family>7</family>
+        <area>28.7</area>
+        <perarea>7.1</perarea>
+    </student>
+    <student id="14">
+        <surname>Шмат</surname>
+        <name>Алексей</name>
+        <fatherName>Анатольевич</fatherName>
+        <city>Минск</city>
+        <street>Дзержинская</street>
+        <house>95</house>  
+        <family>1</family>
+        <area>13.7</area>
+        <perarea>13.7</perarea>
+    </student>
+    <student id="15">
+        <surname>Цвик</surname>
+        <name>Максим</name>
+        <fatherName>Николаевич</fatherName>
+		<city>Минск</city>
+        <street>Дзержинская</street>
+        <house>95</house>        
+        <family>1</family>
+        <perarea>15.009</perarea>
+        <area>15.009</area>
+    </student>
+    <student id="16">
+        <surname>Хотянович</surname>
+        <name>Александр</name>
+        <fatherName>Александрович</fatherName>
+		<city>Минск</city>
+        <street>Дзержинская</street>
+        <house>95</house>        
+        <family>3</family>
+        <perarea>11</perarea>
+        <area>33</area>
+    </student>
+    <student id="17">
+        <surname>Салей</surname>
+        <name>Павел</name>
+        <fatherName>Михайлович</fatherName>
+		<city>Минск</city>
+        <street>Дзержинская</street>
+        <house>95</house>        
+        <family>5</family>
+        <perarea>12.02</perarea>
+        <area>60.1</area>
+    </student>
+    <student id="18">
+        <surname>Цвикевич</surname>
+        <name>Артем</name>
+        <fatherName>Николаевич</fatherName>
+        <city>Минск</city>
+        <street>Менделеева</street>
+        <house>22</house>
+        <family>3</family>
+        <perarea>12</perarea>
+        <area>36</area>
+    </student>
+    <student id="19">
+        <surname>Макуха</surname>
+        <name>Денис</name>
+        <fatherName>Федорович</fatherName>
+		<city>Минск</city>
+        <street>Дзержинская</street>
+        <house>95</house>        
+        <family>4</family>
+        <perarea>10.2</perarea>
+        <area>40.8</area>
+    </student>
+    <student id="20">
+        <surname>Иванов</surname>
+        <name>Иван</name>
+        <fatherName>Иванович</fatherName>
+        <city>Логойск</city>
+        <street>Горького</street>
+        <house>13</house>
+        <family>5</family>
+        <perarea>20.04</perarea>
+        <area>100.2</area>
+    </student>
+    <student id="21">
+        <surname>Горбунов</surname>
+        <name>Иван</name>
+        <fatherName>Никифорович</fatherName>
+        <city>Логойск</city>
+        <street>Горького</street>
+        <house>14</house>
+        <family>1</family>
+        <perarea>20.04</perarea>
+        <area>20.04</area>
+    </student>
+    <student id="22">
+        <surname>Шкляник</surname>
+        <name>Максим</name>
+        <fatherName>Иванович</fatherName>
+        <city>Минск</city>
+        <street>Победительная</street>
+        <house>20</house>
+        <family>1</family>
+        <perarea>30</perarea>
+        <area>30</area>
+    </student>
+    <student id="23">
+        <surname>Батюшков</surname>
+        <name>Дмитрий</name>
+        <fatherName>Олегович</fatherName>
+        <city>Минск</city>
+        <street>Кедышко</street>
+        <house>23а</house>
+        <family>2</family>
+        <perarea>27</perarea>
+        <area>54</area>
+    </student>
+    <student id="24">
+        <surname>Салей</surname>
+        <name>Иван</name>
+        <fatherName>Антонович</fatherName>
+        <city>Минск</city>
+        <street>Независимая</street>
+        <house>34д</house>
+        <family>3</family>
+        <area>36</area>
+        <perarea>12</perarea>
+    </student>
+    <student id="25">
+        <surname>Кержаков</surname>
+        <name>Максим</name>
+        <fatherName>Георгиевич</fatherName>
+        <city>Слоним</city>
+        <street>Пушкина</street>
+        <house>24</house>
+        <family>4</family>
+        <area>80</area>
+        <perarea>20</perarea>
+    </student>
+    <student id="26">
+        <surname>Балотелли</surname>
+        <name>Марио</name>
+        <fatherName>Иванович</fatherName>
+        <city>Слоним</city>
+        <street>5ый переезд</street>
+        <house>32</house>
+        <family>1</family>
+        <perarea>78</perarea>
+        <area>78</area>
+    </student>
+    <student id="27">
+        <surname>Силва</surname>
+        <name>Давид</name>
+        <fatherName>Анатольевич</fatherName>
+        <city>Минск</city>
+        <street>Толбухина</street>
+        <house>13</house>
+        <family>2</family>
+        <area>45</area>
+        <perarea>22.5</perarea>
+    </student>
+    <student id="28">
+        <surname>Агуэро</surname>
+        <name>Серхио</name>
+        <fatherName>Николаевич</fatherName>
+        <city>Логойск</city>
+        <street>Горького</street>
+        <house>13</house>
+        <family>5</family>
+        <perarea>20.04</perarea>
+        <area>100.2</area>
+    </student>
+    <student id="29">
+        <surname>Балотелли</surname>
+        <name>Дмитрий</name>
+        <fatherName>Артемович</fatherName>
+        <city>Минск</city>
+        <street>Кедышко</street>
+        <house>23</house>
+        <family>5</family>
+        <perarea>20</perarea>
+        <area>100</area>
+    </student>
+    <student id="30">
+        <surname>Горбатый</surname>
+        <name>Матвей</name>
+        <fatherName>Иванович</fatherName>
+        <city>Минск</city>
+        <street>Мкадская</street>
+        <house>99</house>
+        <family>2</family>
+        <perarea>24.2</perarea>
+        <area>48.4</area>
+    </student>
+    <student id="31">
+        <surname>Агуэро</surname>
+        <name>Николай</name>
+        <fatherName>Федорович</fatherName>
+        <city>Минск</city>
+        <street>Каменногорская</street>
+        <house>3</house>
+        <family>3</family>
+        <perarea>20.2</perarea>
+        <area>60.6</area>
+    </student>
+    <student id="32">
+        <surname>Савич</surname>
+        <name>Александр</name>
+        <fatherName>Григорьевич</fatherName>
+        <city>Минск</city>
+        <street>Картофанная</street>
+        <house>3</house>
+        <family>2</family>
+        <perarea>27.6</perarea>
+        <area>45.2</area>
+    </student>
+    <student id="33">
+        <surname>Горелый</surname>
+        <name>Сергей</name>
+        <fatherName>Иванович</fatherName>
+        <city>Минск</city>
+        <street>Независимая</street>
+        <house>65</house>
+        <family>1</family>
+        <perarea>26</perarea>
+        <area>26</area>
+    </student>
+    <student id="34">
+        <surname>Васильев</surname>
+        <name>Дмитрий</name>
+        <fatherName>Федорович</fatherName>
+        <city>Слоним</city>
+        <street>Красноармейская</street>
+        <house>45</house>
+        <family>5</family>
+        <perarea>14.1</perarea>
+        <area>80.5</area>
+    </student>
+    <student id="35">
+        <surname>Магомедов</surname>
+        <name>Рамзан</name>
+        <fatherName>Иванович</fatherName>
+        <city>Астана</city>
+        <street>Бородатая</street>
+        <house>31</house>
+        <family>2</family>
+        <perarea>19.9</perarea>
+        <area>39.8</area>
+    </student>
+    <student id="36">
+        <surname>Парфенец</surname>
+        <name>Федор</name>
+        <fatherName>Максимович</fatherName>
+        <city>Минск</city>
+        <street>Кедышко</street>
+        <house>67</house>
+        <family>2</family>
+        <perarea>25</perarea>
+        <area>50</area>
+    </student>
+    <student id="37">
+        <surname>Гриб</surname>
+        <name>Иван</name>
+        <fatherName>Артемович</fatherName>
+        <city>Минск</city>
+        <street>Кедышко</street>
+        <house>67</house>
+        <family>2</family>
+        <perarea>25</perarea>
+        <area>50</area>
+    </student>
+    <student id="38">
+        <surname>Тонкая</surname>
+        <name>Жасмин</name>
+        <fatherName>Ивановна</fatherName>
+        <city>Минск</city>
+        <street>Картофанная</street>
+        <house>36</house>
+        <family>3</family>
+        <perarea>14.07</perarea>
+        <area>42.2</area>
+    </student>
+    <student id="39">
+        <surname>Головин</surname>
+        <name>Максим</name>
+        <fatherName>Петрович</fatherName>
+        <city>Минск</city>
+        <street>Веселая</street>
+        <house>331</house>
+        <family>3</family>
+        <perarea>12</perarea>
+        <area>36</area>
+    </student>
+    <student id="40">
+        <surname>Головин</surname>
+        <name>Марк</name>
+        <fatherName>Антонович</fatherName>
+        <city>Минск</city>
+        <street>Партизанная</street>
+        <house>56</house>
+        <family>4</family>
+        <perarea>11.1</perarea>
+        <area>44.4</area>
+    </student>
+    <student id="41">
+        <surname>Водяной</surname>
+        <name>Иван</name>
+        <fatherName>Максимович</fatherName>
+        <city>Минск</city>
+        <street>Горького</street>
+        <house>13</house>
+        <family>5</family>
+        <perarea>20.04</perarea>
+        <area>100.2</area>
+    </student>
+    <student id="42">
+        <surname>Водяной</surname>
+        <name>Олег</name>
+        <fatherName>Бедросович</fatherName>
+        <city>Логойск</city>
+        <street>Московская</street>
+        <house>44</house>
+        <family>2</family>
+        <perarea>24</perarea>
+        <area>48</area>
+    </student>
+    <student id="43">
+        <surname>Водяной</surname>
+        <name>Альфред</name>
+        <fatherName>Петрович</fatherName>
+        <city>Минск</city>
+        <street>Западная</street>
+        <house>23а</house>
+        <family>1</family>
+        <perarea>14</perarea>
+        <area>14</area>
+    </student>
+    <student id="44">
+        <surname>Огненный</surname>
+        <name>Максим</name>
+        <fatherName>Максимович</fatherName>
+        <city>Минск</city>
+        <street>Восточная</street>
+        <house>35</house>
+        <family>6</family>
+        <perarea>10.6</perarea>
+        <area>61.2</area>
+    </student>
+    <student id="45">
+        <surname>Смолов</surname>
+        <name>Артем</name>
+        <fatherName>Иванович</fatherName>
+        <city>Минск</city>
+        <street>Менделеева</street>
+        <house>10</house>
+        <family>4</family>
+        <perarea>14</perarea>
+        <area>56</area>
+    </student>
+    <student id="46">
+        <surname>Огненный</surname>
+        <name>Петр</name>
+        <fatherName>Вольфович</fatherName>
+        <city>Слоним</city>
+        <street>Ленина</street>
+        <house>13</house>
+        <family>3</family>
+        <perarea>13.11</perarea>
+        <area>39.33</area>
+    </student>
+    <student id="47">
+        <surname>Харизмос</surname>
+        <name>Альфред</name>
+        <fatherName>Иванович</fatherName>
+        <city>Минск</city>
+        <street>Петропавловская</street>
+        <house>45</house>
+        <family>5</family>
+        <perarea>20</perarea>
+        <area>100</area>
+    </student>
+    <student id="48">
+        <surname>Смолов</surname>
+        <name>Георгий</name>
+        <fatherName>Евеньевич</fatherName>
+        <city>Минск</city>
+        <street>Джеринская</street>
+        <house>95</house>
+        <family>3</family>
+        <perarea>20</perarea>
+        <area>60</area>
+    </student>
+    <student id="49">
+        <surname>Харизмос</surname>
+        <name>Иван</name>
+        <fatherName>Иванович</fatherName>
+        <city>Минск</city>
+        <street>Левая</street>
+        <house>11</house>
+        <family>4</family>
+        <perarea>24.1</perarea>
+        <area>96.4</area>
+    </student>
+</list>
