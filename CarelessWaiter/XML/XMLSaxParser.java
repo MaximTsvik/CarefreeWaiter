@@ -70,6 +70,7 @@ public class XMLSaxParser extends DefaultHandler {
             return;
         }
         if (currentElement.equals("free")) {
+            if(content.toString().contains("\t") || content.toString().contains("\n")) return;
             table.setFree(Boolean.parseBoolean(content.toString()));
         }
         if (currentElement.equals("name")) {

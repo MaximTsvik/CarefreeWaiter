@@ -32,16 +32,14 @@ public class WaiterFrame {
     public void start () {
 
         Label label1 = new Label("Вы вошли как: официант");
-        Label label2 = new Label("Выберите кол-во столиков:");
         Button button1 = new Button("Вернуться назад");
 
         GridPane root = new GridPane();
-        root.setPadding(new Insets(20, 20, 20, 100));
+        root.setPadding(new Insets(30, 50, 40, 40));
         root.setVgap(25);
         root.setHgap(25);
         root.setConstraints(label1,0,0);
         root.setConstraints(button1,1,0);
-        root.setConstraints(label2,0,1);
 
         Button load = new Button("Загрузка");
         load.setOnAction( e -> {
@@ -58,30 +56,31 @@ public class WaiterFrame {
             update();
         });
 
-        TextField countField = new TextField();
-        Button clac = new Button("клац");
-        root.getChildren().addAll(label1,button1, label2, countField, clac, load);
+        Button clac = new Button("Показать столы");
+        root.getChildren().addAll(label1,button1, clac, load);
         root.setConstraints(load,3,0);
-        root.setConstraints(countField,1,1);
-        root.setConstraints(clac,2,1);
+        root.setConstraints(clac,2,0);
         clac.setOnAction(event -> {
-            int rowIndex = 2, columnIndex = 0;
             List<Table> tables = controller.getTableBase();
-            for(Table table : tables){
+            int rowIndex = 2, columnIndex = 0;
+            for(Table table : tables) {
                 Button tableView = new Button();
-               if(table.isFree()){ tableView.setText("free");}
-               else {tableView.setText("free");}
-                   tableView.setPrefSize(180,60);
-                   root.getChildren().addAll(tableView);
-                   root.setConstraints(tableView, columnIndex,rowIndex);
-                   rowIndex++;
+                if (table.isFree()) {
+                    tableView.setText("стол " + table.getNumber() + ": свободен");
+                } else {
+                    tableView.setText("стол " + table.getNumber() + ": занят");
+                }
+                root.getChildren().addAll(tableView);
+                tableView.setPrefSize(180, 60);
+                root.setConstraints(tableView, columnIndex, rowIndex);
+                if ((table.getNumber()) % 4 == 0){ rowIndex++; columnIndex = 0; } else columnIndex++;
                    tableView.setOnAction(e -> {
                        Offer offer = new Offer(this.controller);
                        offer.startoffer(table.getNumber());
                    });}
         });
 
-        Scene scene = new Scene(root, 900, 600);
+        Scene scene = new Scene(root, 950, 750);
         Stage stage = new Stage();
 
         button1.setOnAction(e -> {
