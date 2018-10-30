@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <list>
+	<table>
+		<number>1</number>
+		<free>true</free>
+	</table>
+	<table>
+		<number>2</number>
+		<free>true</free>
+	</table>
+	<table>
+		<number>3</number>
+		<free>true</free>
+	</table>
+	<table>
+		<number>4</number>
+		<free>true</free>
+	</table>
+	<table>
+		<number>5</number>
+		<free>true</free>
+	</table>
+	<table>
+		<number>6</number>
+		<free>true</free>
+	</table>
+	<table>
+		<number>7</number>
+		<free>true</free>
+	</table>
 	<dish>
     	<name>Сваяк</name>
     	<category>vodka</category>

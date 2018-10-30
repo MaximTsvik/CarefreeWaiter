@@ -9,9 +9,11 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import javax.swing.plaf.metal.MetalBorders;
+import java.io.File;
 import java.util.List;
 
 import static java.lang.Integer.parseInt;
@@ -20,6 +22,7 @@ public class WaiterFrame {
 
     private MainFrame mainFrame;
     private Controller controller;
+    private Form form;
 
     public WaiterFrame(MainFrame mainFrame, Controller controller) {
         this.mainFrame = mainFrame;
@@ -40,33 +43,42 @@ public class WaiterFrame {
         root.setConstraints(button1,1,0);
         root.setConstraints(label2,0,1);
 
+        Button load = new Button("Загрузка");
+        load.setOnAction( e -> {
+            controller.getDishBase().clear();
+            controller.getTableBase().clear();
+            Stage stage = new Stage();
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Открытие");
+            fileChooser.setInitialDirectory(new java.io.File("./"));
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML", "*.xml"));
+            File file = fileChooser.showOpenDialog(stage);
+            controller.setFile(file);
+            controller.fromFile();
+            update();
+        });
+
         TextField countField = new TextField();
         Button clac = new Button("клац");
-        root.getChildren().addAll(label1,button1, label2, countField, clac);
+        root.getChildren().addAll(label1,button1, label2, countField, clac, load);
+        root.setConstraints(load,3,0);
         root.setConstraints(countField,1,1);
         root.setConstraints(clac,2,1);
         clac.setOnAction(event -> {
-            //List<Table> tables = Controller.getAllTables();
-            //for(Table table: tables){
-            //   if(table.isFree(){
-            //       Button tableView = new Button("free")
-            //       tableView.setOnAction( new Listener(){
-            //          oAction(Event e){
-            //            table.display
-            //   else {
-            //        new Button("offered")
             int rowIndex = 2, columnIndex = 0;
-            for (int i=1; i <= Integer.parseInt(countField.getText());  i++){ int number = i;
-                Button table = new Button(" " + i + " ");
-                table.setPrefSize(180,60);
-                root.getChildren().addAll(table);
-                root.setConstraints(table, columnIndex,rowIndex);
-                if (i % 4 == 0){ rowIndex++; columnIndex = 0; } else columnIndex++;
-                table.setOnAction(e -> {
-                    Offer offer = new Offer(this.controller);
-                    offer.startoffer(number);
-                });
-            }
+            List<Table> tables = controller.getTableBase();
+            for(Table table : tables){
+                Button tableView = new Button();
+               if(table.isFree()){ tableView.setText("free");}
+               else {tableView.setText("free");}
+                   tableView.setPrefSize(180,60);
+                   root.getChildren().addAll(tableView);
+                   root.setConstraints(tableView, columnIndex,rowIndex);
+                   rowIndex++;
+                   tableView.setOnAction(e -> {
+                       Offer offer = new Offer(this.controller);
+                       offer.startoffer(table.getNumber());
+                   });}
         });
 
         Scene scene = new Scene(root, 900, 600);
@@ -80,6 +92,12 @@ public class WaiterFrame {
         stage.setTitle("Официант");
         stage.setScene(scene);
         stage.showAndWait();
+    }
+
+    public void update() {
+        form.clear();
+        form.setList(controller.getDishBase());
+        form.getDishTable().setItems(FXCollections.observableArrayList(controller.getDishBase()));
     }
 }
 

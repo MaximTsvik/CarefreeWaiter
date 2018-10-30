@@ -7,6 +7,7 @@ import Model.TableBase;
 import View.Form;
 import View.MainFrame;
 import View.Offer;
+import View.WaiterFrame;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import java.util.List;
 public class Controller {
     private Form form;
     private Offer offer;
+    private WaiterFrame waiterFrame;
     private MainFrame mainFrame;
     private DishBase dishBase;
     private TableBase tableBase;
@@ -23,18 +25,23 @@ public class Controller {
         mainFrame = new MainFrame(this);
         //offer = new Offer(this.mainFrame, this);
         dishBase = new DishBase(this);
+        tableBase = new TableBase(this);
     }
 
     /*public void removeStudent(List<Dish> stud) {
         getDishBase().removeAll(dis);
     }*/
 
-    public List<Table> getAllTables(){
+    public List<Table> getTableBase(){
         return tableBase.getTableBase();
     }
 
     public void addDish(Dish dish) {
         dishBase.add(dish);
+    }
+
+    public void addTable(Table table) {
+        tableBase.add(table);
     }
 
     public List<Dish> getDishBase() {
@@ -43,6 +50,7 @@ public class Controller {
 
     public void setFile(File file){
         dishBase.setFile(file);
+        tableBase.setFile(file);
     }
 
     public void toFile(File file){
@@ -51,7 +59,9 @@ public class Controller {
 
     public void fromFile(){
         dishBase.fromFile();
+        tableBase.fromFile();
         offer.update();
+        waiterFrame.update();
     }
 
     public List<Dish> chosedDish (Dish dish){

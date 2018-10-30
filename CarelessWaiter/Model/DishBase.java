@@ -61,7 +61,7 @@ public class DishBase {
                 System.out.println(dish.getCategory());
 
             }
-            mainFrame.update();
+//            mainFrame.update();
         } catch (SAXException | ParserConfigurationException | IOException ex) {
             String exText = ex.getMessage();
             controller.alertMessage(exText);

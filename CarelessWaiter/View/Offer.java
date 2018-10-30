@@ -39,8 +39,6 @@ public class Offer {
         Group Table = new Group();
         Table.getChildren().addAll(form.getDishTable());
 
-        Button load = new Button("Загрузка");
-
         GridPane vodkaPane = new GridPane();
         vodkaPane.setHgap(30);
         vodkaPane.setVgap(30);
@@ -145,8 +143,9 @@ public class Offer {
         kitchen.setHgap(30);
         kitchen.setVisible(false);
 
-        load.setOnAction( e -> {
+       /* load.setOnAction( e -> {
             controller.getDishBase().clear();
+            controller.getTableBase().clear();
             Stage stage = new Stage();
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Открытие");
@@ -156,7 +155,7 @@ public class Offer {
             controller.setFile(file);
             controller.fromFile();
             update();
-        });
+        });*/
 
         Button upload = new Button("Сохранить");
         upload.setOnAction(event -> {
@@ -379,11 +378,10 @@ public class Offer {
         essentyki.setPrefSize(120,50);
 
         GridPane root1 = new GridPane();
-        root1.getChildren().addAll(Table, label1,button1, label2,load,upload,test, bar, kitchen, barbutton, kitchenbutton, totheoffer, predchek, vodkaPane, whiskeyPane, waterPane, beerPane, drinksPane, tekilaPane, cognagPane, coctailsPane, back);
+        root1.getChildren().addAll(Table, label1,button1, label2,upload,test, bar, kitchen, barbutton, kitchenbutton, totheoffer, predchek, vodkaPane, whiskeyPane, waterPane, beerPane, drinksPane, tekilaPane, cognagPane, coctailsPane, back);
         root1.setPadding(new Insets(20, 20, 20, 100));
         root1.setVgap(25);
         root1.setHgap(25);
-        root1.setConstraints(load,0,0);
         root1.setConstraints(test,4,4);
         root1.setConstraints(upload,3,4);
         root1.setConstraints(back,1,0);
