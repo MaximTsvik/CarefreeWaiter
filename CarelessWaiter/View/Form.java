@@ -119,7 +119,7 @@ public class Form {
         this.dishList = dishList;
     }
 
-    public void addToList (Dish dish, List<Dish> dishList){
+    public void addToList (List<Dish> dishList, Dish dish){
         this.dishList.add(dish);
     }
 

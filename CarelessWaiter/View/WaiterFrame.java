@@ -76,7 +76,7 @@ public class WaiterFrame {
                 if ((table.getNumber()) % 4 == 0){ rowIndex++; columnIndex = 0; } else columnIndex++;
                    tableView.setOnAction(e -> {
                        Offer offer = new Offer(this.controller);
-                       offer.startoffer(table.getNumber());
+                       offer.startoffer(table);
                    });}
         });
 

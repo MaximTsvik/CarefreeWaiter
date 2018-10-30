@@ -2,6 +2,7 @@ package View;
 
 import Controller.Controller;
 import Model.Dish;
+import Model.Table;
 import javafx.collections.FXCollections;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -26,13 +27,14 @@ public class Offer {
    // private MainFrame mainFrame;
     private Controller controller;
     private Dish dish;
+    private Table table;
 
     public Offer(Controller controller) {
         this.controller = controller;
     }
 
-    public void startoffer (int number) {
-        Label label2 = new Label("Выбран столик: " + number);
+    public void startoffer (Table table) {
+        Label label2 = new Label("Выбран столик: " + table.getNumber());
         Label label1 = new Label("Вы вошли как: официант");
         Button button1 = new Button("Вернуться к выбору столика");
         form = new Form();
@@ -168,11 +170,13 @@ public class Offer {
         });
 
         Button test = new Button("Меню");
+
+
+        List<Dish> resultOfOffer = new ArrayList<>();
+
         test.setOnAction(event -> {
             int columnIndex=0, rowIndex=0, i=0;
-
             for (Dish dish : controller.getDishBase()){
-
                 if (dish.getCategory().equals("vodka")){
                     i++;
                     Button vodkaButton = new Button(dish.getName());
@@ -180,9 +184,10 @@ public class Offer {
                     vodkaPane.getChildren().addAll(vodkaButton);
                     vodkaPane.setConstraints(vodkaButton, columnIndex, rowIndex);
                     if (i % 4 == 0){ rowIndex++; columnIndex = 0; i=0; } else columnIndex++;
-                    vodkaButton.setOnAction(event1 -> {
-                        List<Dish> resultOfOffer = new ArrayList<>();//controller.chosedDish(dish);
-                        form.addToList(dish, resultOfOffer);
+                    vodkaButton.setOnAction(actionEvent -> {
+                        resultOfOffer.add(dish);
+//                        form.addToList(resultOfOffer, dish);
+                        update();
                     });
                 }
 
@@ -201,6 +206,8 @@ public class Offer {
                 }
             }
         });
+
+
 
         //водка
         /*Button svayak = new Button("Сваяк");
