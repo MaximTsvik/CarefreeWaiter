@@ -55,6 +55,9 @@ public class AdminFrame {
             update();
         });
 
+        Scene scene = new Scene(root, 900, 600);
+        Stage stage = new Stage();
+
         activeTables.setOnAction(event -> {
             List<Table> tables = controller.getTableBase();
             int rowIndex = 1, columnIndex = 0;
@@ -66,14 +69,13 @@ public class AdminFrame {
                 root.setConstraints(tableView, columnIndex, rowIndex);
                 if ((table.getNumber()) % 4 == 0){ rowIndex++; columnIndex = 0; } else columnIndex++;
                 tableView.setOnAction(e -> {
-                    Offer offer = new Offer(this.controller);
-                    offer.startoffer(table);
+                    AdminTableFrame adminTableFrame = new AdminTableFrame(this.controller);
+                    adminTableFrame.startAdminTableFrame(table);
+                    stage.close();
                 });
                 }
             }
         });
-        Scene scene = new Scene(root, 900, 600);
-        Stage stage = new Stage();
 
         button1.setOnAction(e -> {
             stage.close();
