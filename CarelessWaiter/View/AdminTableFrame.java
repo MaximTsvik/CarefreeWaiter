@@ -3,6 +3,7 @@ package View;
 import Controller.Controller;
 import Model.Dish;
 import Model.Table;
+import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -10,6 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class AdminTableFrame {
 
@@ -49,9 +52,13 @@ public class AdminTableFrame {
         });
         button2.setOnAction(e -> {
             table.setFree(true);
+            table.dishBase = new ArrayList<>();
             stage.close();
-
         });
+
+        form.setList(table.dishBase);
+        form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
+
         stage.setTitle(table.getNumber() + " стол");
         stage.setScene(scene);
         stage.showAndWait();

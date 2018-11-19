@@ -58,7 +58,24 @@ public class AdminFrame {
         Scene scene = new Scene(root, 900, 600);
         Stage stage = new Stage();
 
-        activeTables.setOnAction(event -> {
+        List<Table> tables = controller.getTableBase();
+        int rowIndex = 1, columnIndex = 0;
+        for(Table table : tables) {
+            if (!table.isFree()) { Button tableView = new Button();
+                tableView.setText("стол " + table.getNumber() + ": занят");
+                root.getChildren().addAll(tableView);
+                tableView.setPrefSize(180, 60);
+                root.setConstraints(tableView, columnIndex, rowIndex);
+                if ((table.getNumber()) % 4 == 0){ rowIndex++; columnIndex = 0; } else columnIndex++;
+                tableView.setOnAction(e -> {
+                    AdminTableFrame adminTableFrame = new AdminTableFrame(this.controller);
+                    adminTableFrame.startAdminTableFrame(table);
+                    stage.close();
+                });
+            }
+        }
+
+       /* activeTables.setOnAction(event -> {
             List<Table> tables = controller.getTableBase();
             int rowIndex = 1, columnIndex = 0;
             for(Table table : tables) {
@@ -75,7 +92,7 @@ public class AdminFrame {
                 });
                 }
             }
-        });
+        });*/
 
         button1.setOnAction(e -> {
             stage.close();

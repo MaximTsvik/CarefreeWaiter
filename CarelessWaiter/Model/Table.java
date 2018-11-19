@@ -1,13 +1,18 @@
 package Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Table {
 
     private int number;
     private boolean free;
+    public List<Dish> dishBase;
 
     public Table() {
         number = 0;
         free = true;
+        dishBase = new ArrayList();
     }
 
     public boolean isFree(){

@@ -170,7 +170,7 @@ public class Offer {
             controller.toFile(file);
         });
 
-        List<Dish> resultOfOffer = new ArrayList<>();
+        //List<Dish> resultOfOffer = new ArrayList<>();
 
         //водка
         /*Button svayak = new Button("Сваяк");
@@ -464,11 +464,13 @@ public class Offer {
         stage.setScene(scene);
 
         totheoffer.setOnAction(e ->{
+            if (table.isFree()) table.setFree(false);
             FileChooser fileChooser = new FileChooser();
             fileChooser.setInitialDirectory(new java.io.File("./"));
             fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML", "*.xml"));
             File file = fileChooser.showSaveDialog(stage);
             controller.toFile(file);
+            stage.close();
         });
 
         predchek.setOnAction(e ->{
@@ -479,18 +481,21 @@ public class Offer {
             controller.toFile(file);
         });
 
+        form.setList(table.dishBase);
+        form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
+
         int columnIndex=0, rowIndex=0, i=0;
         for (Dish dish : controller.getDishBase()){
             if (dish.getCategory().equals("vodka")){
                 i++;
                 Button vodkaButton = new Button(dish.getName());
                 vodkaButton.setOnAction(actionEvent -> {
-                    resultOfOffer.add(dish);
+                    table.dishBase.add(dish);
 //                        form.addToList(resultOfOffer, dish);
                     // update();
                     // form.clear();
-                    form.setList(resultOfOffer);
-                    form.getDishTable().setItems(FXCollections.observableArrayList(resultOfOffer));
+                    form.setList(table.dishBase);
+                    form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
                 });
                 vodkaButton.setPrefSize(120,50);
                 vodkaPane.getChildren().addAll(vodkaButton);
