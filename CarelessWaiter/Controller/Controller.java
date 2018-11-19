@@ -23,14 +23,9 @@ public class Controller {
 
     public Controller() {
         mainFrame = new MainFrame(this);
-        //offer = new Offer(this.mainFrame, this);
         dishBase = new DishBase(this);
         tableBase = new TableBase(this);
     }
-
-    /*public void removeStudent(List<Dish> stud) {
-        getDishBase().removeAll(dis);
-    }*/
 
     public List<Table> getTableBase(){
         return tableBase.getTableBase();
@@ -63,64 +58,7 @@ public class Controller {
         offer.update();
         waiterFrame.update();
     }
-
-    public List<Dish> chosedDish (Dish dish){
-        List<Dish> searchDish = new ArrayList<>();
-        List<Dish> allDish = new ArrayList<>();
-
-        for (Dish dish1 : allDish){
-            searchDish.add(dish1);
-        }
-        return searchDish;
-    }
-
-    /*public List<Dish> searchStudents (Dish searchStudent, String paramSearch) {
-        List<Dish> searchStud = new ArrayList<>();
-        List<Dish> allStudents = getStudentBase();
-
-       if (paramSearch.equals("Family")) {
-            for (Dish stud : allStudents) {
-                if (stud.getSurname().equals(searchStudent.getSurname())
-                        && (stud.getFamily() == (searchStudent.getFamily()))) {
-                    searchStud.add(stud);
-                }
-            }
-        }
-
-       else if (paramSearch.equals("Area")) {
-           for (Student stud : allStudents) {
-               if (stud.getFamily() == searchStudent.getFamily()
-                       && (stud.getArea() >= (searchStudent.getMinArea()))
-                       && (stud.getArea() <= (searchStudent.getMaxArea())))
-               {
-                   searchStud.add(stud);
-               }
-           }
-       }
-
-       else if (paramSearch.equals("Surname")) {
-            for (Student stud : allStudents) {
-                if (stud.getSurname().equals(searchStudent.getSurname())
-                        && (stud.getArea() >= (searchStudent.getMinArea()))
-                        && (stud.getArea() <= (searchStudent.getMaxArea())))
-                {
-                    searchStud.add(stud);
-                }
-            }
-        }
-
-       else if (paramSearch.equals("Perarea")) {
-           for (Student stud : allStudents) {
-               if ((stud.getPerarea() >= (searchStudent.getPerarea())))
-               {
-                   searchStud.add(stud);
-               }
-           }
-       }
-
-        return searchStud;
-    }*/
-
+    
     public void alertMessage(String text){
         mainFrame.alertMessage(text);
     }

@@ -4,7 +4,6 @@ import Controller.Controller;
 import Model.Table;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
@@ -75,28 +74,8 @@ public class AdminFrame {
             }
         }
 
-       /* activeTables.setOnAction(event -> {
-            List<Table> tables = controller.getTableBase();
-            int rowIndex = 1, columnIndex = 0;
-            for(Table table : tables) {
-                if (!table.isFree()) { Button tableView = new Button();
-                tableView.setText("стол " + table.getNumber() + ": занят");
-                root.getChildren().addAll(tableView);
-                tableView.setPrefSize(180, 60);
-                root.setConstraints(tableView, columnIndex, rowIndex);
-                if ((table.getNumber()) % 4 == 0){ rowIndex++; columnIndex = 0; } else columnIndex++;
-                tableView.setOnAction(e -> {
-                    AdminTableFrame adminTableFrame = new AdminTableFrame(this.controller);
-                    adminTableFrame.startAdminTableFrame(table);
-                    stage.close();
-                });
-                }
-            }
-        });*/
-
         button1.setOnAction(e -> {
             stage.close();
-            //MainFrame mainFrame = new MainFrame(controller);
         });
 
         stage.setTitle("Администратор");
@@ -109,5 +88,4 @@ public class AdminFrame {
         form.setList(controller.getDishBase());
         form.getDishTable().setItems(FXCollections.observableArrayList(controller.getDishBase()));
     }
-
 }

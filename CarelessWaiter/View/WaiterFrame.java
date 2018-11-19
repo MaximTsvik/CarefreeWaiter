@@ -3,20 +3,16 @@ package View;
 import Controller.Controller;
 import Model.Table;
 import javafx.collections.FXCollections;
-import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import javax.swing.plaf.metal.MetalBorders;
 import java.io.File;
 import java.util.List;
 
-import static java.lang.Integer.parseInt;
 
 public class WaiterFrame {
 
@@ -48,7 +44,6 @@ public class WaiterFrame {
         load.setOnAction( e -> {
             controller.getDishBase().clear();
             controller.getTableBase().clear();
-           // Stage stage = new Stage();
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Открытие");
             fileChooser.setInitialDirectory(new java.io.File("./"));
@@ -85,7 +80,6 @@ public class WaiterFrame {
 
         button1.setOnAction(e -> {
             stage.close();
-            //MainFrame mainFrame = new MainFrame(controller);
         });
 
         stage.setTitle("Официант");
@@ -99,5 +93,3 @@ public class WaiterFrame {
         form.getDishTable().setItems(FXCollections.observableArrayList(controller.getDishBase()));
     }
 }
-
-

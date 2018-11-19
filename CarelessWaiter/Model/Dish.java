@@ -46,10 +46,10 @@ public class Dish {
         this.value = value;
     }
 
-    public void clean() {
+    /*public void clean() {
         name = "";
         category = "";
         cost = 0.0;
         value = 0.0;
-    }
+    }*/
 }

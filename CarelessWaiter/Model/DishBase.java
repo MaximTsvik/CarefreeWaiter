@@ -18,7 +18,6 @@ public class DishBase {
     private MainFrame mainFrame;
     private Controller controller;
     private List<Dish> dishBase = new ArrayList();
-    //private List<Dish> dishes = new ArrayList();
     private File file;
 
     public DishBase(Controller controller) {

@@ -6,17 +6,14 @@ import Model.Table;
 import javafx.collections.FXCollections;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import javax.swing.plaf.metal.MetalBorders;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,10 +21,7 @@ import java.util.List;
 public class Offer {
 
     private Form form;
-    private MainFrame mainFrame;
     private Controller controller;
-    private Dish dish;
-    private Table table;
 
     public Offer(Controller controller) {
         this.controller = controller;
@@ -145,20 +139,6 @@ public class Offer {
         kitchen.setVgap(30);
         kitchen.setHgap(30);
         kitchen.setVisible(false);
-
-       /* load.setOnAction( e -> {
-            controller.getDishBase().clear();
-            controller.getTableBase().clear();
-            Stage stage = new Stage();
-            FileChooser fileChooser = new FileChooser();
-            fileChooser.setTitle("Открытие");
-            fileChooser.setInitialDirectory(new java.io.File("./"));
-            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML", "*.xml"));
-            File file = fileChooser.showOpenDialog(stage);
-            controller.setFile(file);
-            controller.fromFile();
-            update();
-        });*/
 
         Button upload = new Button("Сохранить");
         upload.setOnAction(event -> {
@@ -436,18 +416,7 @@ public class Offer {
             kitchen.setVisible(false);
             waterPane.setVisible(true);
         });
-        //svayak.setOnAction(event -> {
-            /*AddFrame addFrame = new AddFrame(this.mainFrame, this.controller);
-            AddFrame.sta
-            /*Dish svayak1 = new Dish();
-            svayak1.setName("Сваяк");
-            svayak1.setCost(2.5);
-            svayak1.setValue(0.05);
-            controller.addDish(svayak1);
-            form.clear();
-            form.setList(controller.getDishBase());
-            form.getDishTable().setItems(FXCollections.observableArrayList(controller.getDishBase()));*/
-        //});
+
         kitchenbutton.setOnAction(e ->{
             bar.setVisible(false);
             kitchen.setVisible(true);
@@ -509,9 +478,7 @@ public class Offer {
                 whiskeyPane.setConstraints(whiskeyButton, columnIndex, rowIndex);
                 if (i % 4 == 0){ rowIndex++; columnIndex = 0; i=0; } else columnIndex++;
                 whiskeyButton.setOnAction(event1 -> {
-                    List<Dish> resultOfSearch = controller.chosedDish(dish);
-                    form.setList(resultOfSearch);
-                    form.getDishTable().setItems(FXCollections.observableArrayList(resultOfSearch));
+
                 });
             }
         }
