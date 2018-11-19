@@ -27,20 +27,20 @@ public class AdminFrame {
 
     public void start () {
         Label label1 = new Label("Вы вошли как: администратор");
+        Label label2 = new Label("Активные столы:");
         GridPane root = new GridPane();
         Button button1 = new Button("Вернуться назад");
-        Button activeTables = new Button("Показать активные столы");
-        root.getChildren().addAll(label1,button1, activeTables);
+        root.getChildren().addAll(label1,button1, label2);
         root.setPadding(new Insets(30, 50, 40, 40));
         root.setVgap(40);
         root.setHgap(40);
         root.setConstraints(label1,0,0);
         root.setConstraints(button1,1,0);
-        root.setConstraints(activeTables,2,0);
+        root.setConstraints(label2,0,1);
 
-        Button load = new Button("Загрузка");
+        Button load = new Button("Загрузка меню и столов");
         root.getChildren().addAll(load);
-        root.setConstraints(load,3,0);
+        root.setConstraints(load,2,0);
         load.setOnAction( e -> {
             controller.getDishBase().clear();
             controller.getTableBase().clear();
@@ -59,7 +59,7 @@ public class AdminFrame {
         Stage stage = new Stage();
 
         List<Table> tables = controller.getTableBase();
-        int rowIndex = 1, columnIndex = 0;
+        int rowIndex = 2, columnIndex = 0;
         for(Table table : tables) {
             if (!table.isFree()) { Button tableView = new Button();
                 tableView.setText("стол " + table.getNumber() + ": занят");

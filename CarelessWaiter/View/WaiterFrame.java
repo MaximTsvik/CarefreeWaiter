@@ -41,11 +41,14 @@ public class WaiterFrame {
         root.setConstraints(label1,0,0);
         root.setConstraints(button1,1,0);
 
-        Button load = new Button("Загрузка");
+        Scene scene = new Scene(root, 950, 750);
+        Stage stage = new Stage();
+
+        Button load = new Button("Загрузка меню и столов");
         load.setOnAction( e -> {
             controller.getDishBase().clear();
             controller.getTableBase().clear();
-            Stage stage = new Stage();
+           // Stage stage = new Stage();
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Открытие");
             fileChooser.setInitialDirectory(new java.io.File("./"));
@@ -79,9 +82,6 @@ public class WaiterFrame {
                        offer.startoffer(table);
                    });}
         });
-
-        Scene scene = new Scene(root, 950, 750);
-        Stage stage = new Stage();
 
         button1.setOnAction(e -> {
             stage.close();

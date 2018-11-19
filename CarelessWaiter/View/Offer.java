@@ -24,7 +24,7 @@ import java.util.List;
 public class Offer {
 
     private Form form;
-   // private MainFrame mainFrame;
+    private MainFrame mainFrame;
     private Controller controller;
     private Dish dish;
     private Table table;
@@ -170,7 +170,7 @@ public class Offer {
             controller.toFile(file);
         });
 
-        //List<Dish> resultOfOffer = new ArrayList<>();
+        List<Dish> resultOfOffer = new ArrayList<>();
 
         //водка
         /*Button svayak = new Button("Сваяк");
@@ -491,9 +491,7 @@ public class Offer {
                 Button vodkaButton = new Button(dish.getName());
                 vodkaButton.setOnAction(actionEvent -> {
                     table.dishBase.add(dish);
-//                        form.addToList(resultOfOffer, dish);
-                    // update();
-                    // form.clear();
+                    resultOfOffer.add(dish);
                     form.setList(table.dishBase);
                     form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
                 });
@@ -517,7 +515,6 @@ public class Offer {
                 });
             }
         }
-
 
         stage.showAndWait();
     }
