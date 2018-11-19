@@ -34,12 +34,13 @@ public class Offer {
     }
 
     public void startoffer (Table table) {
+
         Label label2 = new Label("Выбран столик: " + table.getNumber());
         Label label1 = new Label("Вы вошли как: официант");
         Button button1 = new Button("Вернуться к выбору столика");
         form = new Form();
-        Group Table = new Group();
-        Table.getChildren().addAll(form.getDishTable());
+        Group Tablee = new Group();
+        Tablee.getChildren().addAll(form.getDishTable());
 
         GridPane vodkaPane = new GridPane();
         vodkaPane.setHgap(30);
@@ -169,45 +170,7 @@ public class Offer {
             controller.toFile(file);
         });
 
-        Button test = new Button("Меню");
-
-
         List<Dish> resultOfOffer = new ArrayList<>();
-
-        test.setOnAction(event -> {
-            int columnIndex=0, rowIndex=0, i=0;
-            for (Dish dish : controller.getDishBase()){
-                if (dish.getCategory().equals("vodka")){
-                    i++;
-                    Button vodkaButton = new Button(dish.getName());
-                    vodkaButton.setPrefSize(120,50);
-                    vodkaPane.getChildren().addAll(vodkaButton);
-                    vodkaPane.setConstraints(vodkaButton, columnIndex, rowIndex);
-                    if (i % 4 == 0){ rowIndex++; columnIndex = 0; i=0; } else columnIndex++;
-                    vodkaButton.setOnAction(actionEvent -> {
-                        resultOfOffer.add(dish);
-//                        form.addToList(resultOfOffer, dish);
-                        update();
-                    });
-                }
-
-                if (dish.getCategory().equals("whiskey")){
-                    i++;
-                    Button whiskeyButton = new Button(dish.getName());
-                    whiskeyButton.setPrefSize(120,50);
-                    whiskeyPane.getChildren().addAll(whiskeyButton);
-                    whiskeyPane.setConstraints(whiskeyButton, columnIndex, rowIndex);
-                    if (i % 4 == 0){ rowIndex++; columnIndex = 0; i=0; } else columnIndex++;
-                    whiskeyButton.setOnAction(event1 -> {
-                        List<Dish> resultOfSearch = controller.chosedDish(dish);
-                        form.setList(resultOfSearch);
-                        form.getDishTable().setItems(FXCollections.observableArrayList(resultOfSearch));
-                    });
-                }
-            }
-        });
-
-
 
         //водка
         /*Button svayak = new Button("Сваяк");
@@ -385,11 +348,10 @@ public class Offer {
         essentyki.setPrefSize(120,50);
 
         GridPane root1 = new GridPane();
-        root1.getChildren().addAll(Table, label1,button1, label2,upload,test, bar, kitchen, barbutton, kitchenbutton, totheoffer, predchek, vodkaPane, whiskeyPane, waterPane, beerPane, drinksPane, tekilaPane, cognagPane, coctailsPane, back);
+        root1.getChildren().addAll(Tablee, label1,button1, label2,upload, bar, kitchen, barbutton, kitchenbutton, totheoffer, predchek, vodkaPane, whiskeyPane, waterPane, beerPane, drinksPane, tekilaPane, cognagPane, coctailsPane, back);
         root1.setPadding(new Insets(20, 20, 20, 100));
         root1.setVgap(25);
         root1.setHgap(25);
-        root1.setConstraints(test,4,4);
         root1.setConstraints(upload,3,4);
         root1.setConstraints(back,1,0);
         root1.setHalignment(back, HPos.RIGHT);
@@ -413,7 +375,7 @@ public class Offer {
         root1.setConstraints(label1,0,0);
         root1.setConstraints(button1,1,0);
         root1.setConstraints(label2,0,1);
-        root1.setConstraints(Table,0,2);
+        root1.setConstraints(Tablee,0,2);
         root1.setValignment(label2, VPos.TOP);
         root1.setConstraints(predchek, 0,4);
 
@@ -497,6 +459,7 @@ public class Offer {
         button1.setOnAction(e -> {
             stage.close();
         });
+
         stage.setTitle("Официант");
         stage.setScene(scene);
 
@@ -515,6 +478,41 @@ public class Offer {
             File file = fileChooser.showSaveDialog(stage);
             controller.toFile(file);
         });
+
+        int columnIndex=0, rowIndex=0, i=0;
+        for (Dish dish : controller.getDishBase()){
+            if (dish.getCategory().equals("vodka")){
+                i++;
+                Button vodkaButton = new Button(dish.getName());
+                vodkaButton.setOnAction(actionEvent -> {
+                    resultOfOffer.add(dish);
+//                        form.addToList(resultOfOffer, dish);
+                    // update();
+                    // form.clear();
+                    form.setList(resultOfOffer);
+                    form.getDishTable().setItems(FXCollections.observableArrayList(resultOfOffer));
+                });
+                vodkaButton.setPrefSize(120,50);
+                vodkaPane.getChildren().addAll(vodkaButton);
+                vodkaPane.setConstraints(vodkaButton, columnIndex, rowIndex);
+                if (i % 4 == 0){ rowIndex++; columnIndex = 0; i=0; } else columnIndex++;
+            }
+
+            if (dish.getCategory().equals("whiskey")){
+                i++;
+                Button whiskeyButton = new Button(dish.getName());
+                whiskeyButton.setPrefSize(120,50);
+                whiskeyPane.getChildren().addAll(whiskeyButton);
+                whiskeyPane.setConstraints(whiskeyButton, columnIndex, rowIndex);
+                if (i % 4 == 0){ rowIndex++; columnIndex = 0; i=0; } else columnIndex++;
+                whiskeyButton.setOnAction(event1 -> {
+                    List<Dish> resultOfSearch = controller.chosedDish(dish);
+                    form.setList(resultOfSearch);
+                    form.getDishTable().setItems(FXCollections.observableArrayList(resultOfSearch));
+                });
+            }
+        }
+
 
         stage.showAndWait();
     }
