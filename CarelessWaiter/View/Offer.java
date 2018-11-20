@@ -40,10 +40,8 @@ public class Offer {
         vodkaPane.setHgap(30);
         vodkaPane.setVgap(30);
         vodkaPane.setVisible(false);
-        Button vodka = new Button("Водка");
 
         GridPane whiskeyPane = new GridPane();
-        Button whiskey = new Button("Виски");
         whiskeyPane.setHgap(30);
         whiskeyPane.setVgap(30);
         whiskeyPane.setVisible(false);
@@ -78,6 +76,33 @@ public class Offer {
         waterPane.setVgap(30);
         waterPane.setVisible(false);
 
+        GridPane hotPane = new GridPane();
+        hotPane.setHgap(30);
+        hotPane.setVgap(30);
+        hotPane.setVisible(false);
+
+        GridPane coldPane = new GridPane();
+        coldPane.setHgap(30);
+        coldPane.setVgap(30);
+        coldPane.setVisible(false);
+
+        GridPane salatsPane = new GridPane();
+        salatsPane.setHgap(30);
+        salatsPane.setVgap(30);
+        salatsPane.setVisible(false);
+
+        GridPane soupsPane = new GridPane();
+        soupsPane.setHgap(30);
+        soupsPane.setVgap(30);
+        soupsPane.setVisible(false);
+
+        GridPane desertsPane = new GridPane();
+        desertsPane.setHgap(30);
+        desertsPane.setVgap(30);
+        desertsPane.setVisible(false);
+
+        Button vodka = new Button("Водка");
+        Button whiskey = new Button("Виски");
         Button beer = new Button("Пиво");
         Button coctails = new Button("Коктейли");
         Button cognag = new Button("Коньяк");
@@ -152,183 +177,8 @@ public class Offer {
 
         List<Dish> resultOfOffer = new ArrayList<>();
 
-        //водка
-        /*Button svayak = new Button("Сваяк");
-        Button finka = new Button("Finlandiya");
-        Button absolut = new Button("Absolut");
-        Button smirnoff = new Button("Smirnoff");*/
-
-        //вискарь
-        /*Button jameson = new Button("Jameson");
-        Button jimBeam = new Button("JimBeam");
-        Button jackDaniels = new Button("JackDaniels");
-        Button grants = new Button("Grants");*/
-
-        //пиво
-        Button heineken = new Button("Heineken");
-        Button bobrov = new Button("Бобров");
-        Button zlatyBazant = new Button("ZlatyBazant");
-        Button zhiguli = new Button("Жигули Барное");
-
-        //коктейли
-        Button longAilend = new Button("Лонг Айленд");
-        Button b52 = new Button("Б-52");
-        Button mohito = new Button("Мохито");
-        Button pinaKolada = new Button("Пина Колада");
-
-        //коньяк
-        Button moldova5 = new Button("Молдова 5*");
-        Button hennesey5 = new Button("Hennesey 5*");
-        Button ararat5 = new Button("Арарат 5*");
-        Button metaxa7 = new Button("Metaxa 7*");
-
-        //текила
-        Button joseCuervoGold = new Button("Jose Cuervo Gold");
-        Button joseCuervoSelver = new Button("Jose Cuervo Silver");
-        Button olmecaGold = new Button("Olmeca Gold");
-        Button olmecaBlanco = new Button("Olmeca Blanco");
-
-        //напитки
-        Button cola = new Button("Кола");
-        Button sprite = new Button("Спрайт");
-        Button fanta = new Button("Фанта");
-        Button shweppes = new Button("Швепс Биттер Лемон");
-
-        //вода
-        Button bonaquaYes = new Button("Бонаква ср/газ");
-        Button bonaquaNo = new Button("Бонаква н/газ");
-        Button borjomi = new Button("Боржоми");
-        Button essentyki = new Button("Ессентуки");
-
-        //горячие блюда
-        Button newYork = new Button("Стейк New York");
-        Button pork = new Button("Корейка-гриль");
-        Button chikenGrill = new Button("Курица-гриль");
-        Button salmon = new Button("Форель-гриль");
-        Button porkShashlik = new Button("Шашлык из шеи");
-        Button chikenShashlik = new Button("Шашлык из курицы");
-        Button vegetables = new Button("Овощи-гриль");
-        Button potatoes = new Button("Картофель по-домашнему");
-
-        //холодные закуски
-        Button vegetablesNar = new Button("Овощная нарезка");
-        Button meatNar = new Button("Мясная нарезка");
-        Button underVodka = new Button("Закуска под-водку");
-        Button caprese = new Button("Капрезе");
-        Button sirtaki = new Button("Сиртаки");
-        Button lemon = new Button("Лимон");
-        Button cheeseNar = new Button("Сырная палитра");
-        Button soleniya = new Button("Ассорти из солений");
-
-        //салаты
-        Button cezar = new Button("Цезарь");
-        Button greece = new Button("Греческий");
-        Button olivie = new Button("Оливье");
-        Button carrot = new Button("Морковь пикантная");
-
-        //супы
-        Button mushroomSoup = new Button("Крем-суп грибной");
-        Button solyankaSoup = new Button("Солянка");
-        Button schi = new Button("Щи");
-        Button rossolnik = new Button("Россольник");
-
-        //десерты
-        Button fruitNar = new Button("Фруктовая палитра");
-        Button iceCream = new Button("Мороженое");
-        Button cheeseCake = new Button("Чизкейк");
-        Button chocolateCake = new Button("Шоколадный торт");
-
-        /*vodkaPane.getChildren().addAll(svayak, finka, absolut, smirnoff);
-        vodkaPane.setConstraints(svayak, 0,0);
-        vodkaPane.setConstraints(finka, 1,0);
-        vodkaPane.setConstraints(absolut, 2,0);
-        vodkaPane.setConstraints(smirnoff, 3,0);
-        svayak.setPrefSize(120,50);
-        finka.setPrefSize(120,50);
-        absolut.setPrefSize(120,50);
-        smirnoff.setPrefSize(120,50);
-        vodkaPane.setHgap(30);
-        vodkaPane.setVgap(30);
-        vodkaPane.setVisible(false);*/
-
-        /*whiskeyPane.getChildren().addAll(jameson, jackDaniels, jimBeam, grants);
-        whiskeyPane.setConstraints(jameson, 0,0);
-        whiskeyPane.setConstraints(jackDaniels, 1,0);
-        whiskeyPane.setConstraints(jimBeam, 2,0);
-        whiskeyPane.setConstraints(grants, 3,0);
-        jameson.setPrefSize(120,50);
-        jackDaniels.setPrefSize(120,50);
-        jimBeam.setPrefSize(120,50);
-        grants.setPrefSize(120,50);*/
-
-
-
-        beerPane.getChildren().addAll(heineken, bobrov, zlatyBazant, zhiguli);
-        beerPane.setConstraints(heineken, 0,0);
-        beerPane.setConstraints(bobrov, 1,0);
-        beerPane.setConstraints(zlatyBazant, 2,0);
-        beerPane.setConstraints(zhiguli, 3,0);
-        heineken.setPrefSize(120,50);
-        bobrov.setPrefSize(120,50);
-        zlatyBazant.setPrefSize(120,50);
-        zhiguli.setPrefSize(120,50);
-
-        coctailsPane.getChildren().addAll(longAilend, b52, mohito, pinaKolada);
-        coctailsPane.setConstraints(longAilend, 0,0);
-        coctailsPane.setConstraints(b52, 1,0);
-        coctailsPane.setConstraints(mohito, 2,0);
-        coctailsPane.setConstraints(pinaKolada, 3,0);
-        longAilend.setPrefSize(120,50);
-        b52.setPrefSize(120,50);
-        mohito.setPrefSize(120,50);
-        pinaKolada.setPrefSize(120,50);
-
-
-        cognagPane.getChildren().addAll(moldova5, metaxa7, hennesey5, ararat5);
-        cognagPane.setConstraints(moldova5, 0,0);
-        cognagPane.setConstraints(metaxa7, 1,0);
-        cognagPane.setConstraints(hennesey5, 2,0);
-        cognagPane.setConstraints(ararat5, 3,0);
-        moldova5.setPrefSize(120,50);
-        metaxa7.setPrefSize(120,50);
-        hennesey5.setPrefSize(120,50);
-        ararat5.setPrefSize(120,50);
-
-
-        tekilaPane.getChildren().addAll(joseCuervoGold, joseCuervoSelver, olmecaBlanco, olmecaGold);
-        tekilaPane.setConstraints(joseCuervoGold, 0,0);
-        tekilaPane.setConstraints(joseCuervoSelver, 1,0);
-        tekilaPane.setConstraints(olmecaBlanco, 2,0);
-        tekilaPane.setConstraints(olmecaGold, 3,0);
-        joseCuervoGold.setPrefSize(120,50);
-        joseCuervoSelver.setPrefSize(120,50);
-        olmecaBlanco.setPrefSize(120,50);
-        olmecaGold.setPrefSize(120,50);
-
-
-        drinksPane.getChildren().addAll(cola, sprite, fanta, shweppes);
-        drinksPane.setConstraints(cola, 0,0);
-        drinksPane.setConstraints(sprite, 1,0);
-        drinksPane.setConstraints(fanta, 2,0);
-        drinksPane.setConstraints(shweppes, 3,0);
-        cola.setPrefSize(120,50);
-        sprite.setPrefSize(120,50);
-        fanta.setPrefSize(120,50);
-        shweppes.setPrefSize(120,50);
-
-
-        waterPane.getChildren().addAll(bonaquaNo, bonaquaYes, essentyki, borjomi);
-        waterPane.setConstraints(bonaquaYes, 0,0);
-        waterPane.setConstraints(bonaquaNo, 1,0);
-        waterPane.setConstraints(borjomi, 2,0);
-        waterPane.setConstraints(essentyki, 3,0);
-        bonaquaYes.setPrefSize(120,50);
-        bonaquaNo.setPrefSize(120,50);
-        borjomi.setPrefSize(120,50);
-        essentyki.setPrefSize(120,50);
-
         GridPane root1 = new GridPane();
-        root1.getChildren().addAll(Tablee, label1,button1, label2,upload, bar, kitchen, barbutton, kitchenbutton, totheoffer, predchek, vodkaPane, whiskeyPane, waterPane, beerPane, drinksPane, tekilaPane, cognagPane, coctailsPane, back);
+        root1.getChildren().addAll(Tablee, label1,button1, label2,upload, bar, kitchen, barbutton, kitchenbutton, totheoffer, predchek, vodkaPane, whiskeyPane, waterPane, beerPane, drinksPane, tekilaPane, cognagPane, coctailsPane, hotPane, coldPane, desertsPane, soupsPane, salatsPane, back);
         root1.setPadding(new Insets(20, 20, 20, 100));
         root1.setVgap(25);
         root1.setHgap(25);
@@ -358,6 +208,11 @@ public class Offer {
         root1.setConstraints(Tablee,0,2);
         root1.setValignment(label2, VPos.TOP);
         root1.setConstraints(predchek, 0,4);
+        root1.setConstraints(hotPane,1,2);
+        root1.setConstraints(coldPane,1,2);
+        root1.setConstraints(desertsPane,1,2);
+        root1.setConstraints(soupsPane,1,2);
+        root1.setConstraints(salatsPane,1,2);
 
         Scene scene = new Scene(root1, 1300, 650);
         Stage stage = new Stage();
@@ -372,6 +227,11 @@ public class Offer {
             tekilaPane.setVisible(false);
             drinksPane.setVisible(false);
             waterPane.setVisible(false);
+            hotPane.setVisible(false);
+            coldPane.setVisible(false);
+            salatsPane.setVisible(false);
+            soupsPane.setVisible(false);
+            desertsPane.setVisible(false);
         });
         whiskey.setOnAction(event -> {
             bar.setVisible(false);
@@ -403,9 +263,6 @@ public class Offer {
             kitchen.setVisible(false);
             tekilaPane.setVisible(true);
         });
-        cola.setOnAction(event -> {
-            System.out.println();
-        });
         drinks.setOnAction(event -> {
             bar.setVisible(false);
             kitchen.setVisible(false);
@@ -416,7 +273,31 @@ public class Offer {
             kitchen.setVisible(false);
             waterPane.setVisible(true);
         });
-
+        hot.setOnAction(event -> {
+            bar.setVisible(false);
+            kitchen.setVisible(false);
+            hotPane.setVisible(true);
+        });
+        cold.setOnAction(event -> {
+            bar.setVisible(false);
+            kitchen.setVisible(false);
+            coldPane.setVisible(true);
+        });
+        salats.setOnAction(event -> {
+            bar.setVisible(false);
+            kitchen.setVisible(false);
+            salatsPane.setVisible(true);
+        });
+        deserts.setOnAction(event -> {
+            bar.setVisible(false);
+            kitchen.setVisible(false);
+            desertsPane.setVisible(true);
+        });
+        soups.setOnAction(event -> {
+            bar.setVisible(false);
+            kitchen.setVisible(false);
+            soupsPane.setVisible(true);
+        });
         kitchenbutton.setOnAction(e ->{
             bar.setVisible(false);
             kitchen.setVisible(true);
@@ -426,6 +307,7 @@ public class Offer {
             kitchen.setVisible(false);
         });
         button1.setOnAction(e -> {
+            table.dishBase = new ArrayList<>();
             stage.close();
         });
 
@@ -453,7 +335,7 @@ public class Offer {
         form.setList(table.dishBase);
         form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
 
-        int columnIndex=0, rowIndex=0, i=0;
+        int columnIndex=0, rowIndex=0, i=0, v=0, w=0, d=0, ds=0, s=0, sp=0, wt=0, b=0, c=0, cc=0, cl=0, t=0, h=0;
         for (Dish dish : controller.getDishBase()){
             if (dish.getCategory().equals("vodka")){
                 i++;
@@ -466,19 +348,175 @@ public class Offer {
                 });
                 vodkaButton.setPrefSize(120,50);
                 vodkaPane.getChildren().addAll(vodkaButton);
-                vodkaPane.setConstraints(vodkaButton, columnIndex, rowIndex);
-                if (i % 4 == 0){ rowIndex++; columnIndex = 0; i=0; } else columnIndex++;
+                vodkaPane.setConstraints(vodkaButton, columnIndex, v);
+                if (i % 4 == 0){ v++; columnIndex = 0; i=0; } else columnIndex++;
             }
-
             if (dish.getCategory().equals("whiskey")){
                 i++;
                 Button whiskeyButton = new Button(dish.getName());
                 whiskeyButton.setPrefSize(120,50);
                 whiskeyPane.getChildren().addAll(whiskeyButton);
-                whiskeyPane.setConstraints(whiskeyButton, columnIndex, rowIndex);
-                if (i % 4 == 0){ rowIndex++; columnIndex = 0; i=0; } else columnIndex++;
+                whiskeyPane.setConstraints(whiskeyButton, columnIndex, w);
+                if (i % 4 == 0){ w++; columnIndex = 0; i=0; } else columnIndex++;
                 whiskeyButton.setOnAction(event1 -> {
-
+                    table.dishBase.add(dish);
+                    resultOfOffer.add(dish);
+                    form.setList(table.dishBase);
+                    form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
+                });
+            }
+            if (dish.getCategory().equals("beer")){
+                i++;
+                Button beerButton = new Button(dish.getName());
+                beerButton.setPrefSize(120,50);
+                beerPane.getChildren().addAll(beerButton);
+                beerPane.setConstraints(beerButton, columnIndex, b);
+                if (i % 4 == 0){ b++; columnIndex = 0; i=0; } else columnIndex++;
+                beerButton.setOnAction(event1 -> {
+                    table.dishBase.add(dish);
+                    resultOfOffer.add(dish);
+                    form.setList(table.dishBase);
+                    form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
+                });
+            }
+            if (dish.getCategory().equals("cognag")){
+                i++;
+                Button cognagButton = new Button(dish.getName());
+                cognagButton.setPrefSize(120,50);
+                cognagPane.getChildren().addAll(cognagButton);
+                cognagPane.setConstraints(cognagButton, columnIndex, c);
+                if (i % 4 == 0){ c++; columnIndex = 0; i=0; } else columnIndex++;
+                cognagButton.setOnAction(event1 -> {
+                    table.dishBase.add(dish);
+                    resultOfOffer.add(dish);
+                    form.setList(table.dishBase);
+                    form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
+                });
+            }
+            if (dish.getCategory().equals("tekila")){
+                i++;
+                Button tekilaButton = new Button(dish.getName());
+                tekilaButton.setPrefSize(120,50);
+                tekilaPane.getChildren().addAll(tekilaButton);
+                tekilaPane.setConstraints(tekilaButton, columnIndex, t);
+                if (i % 4 == 0){ t++; columnIndex = 0; i=0; } else columnIndex++;
+                tekilaButton.setOnAction(event1 -> {
+                    table.dishBase.add(dish);
+                    resultOfOffer.add(dish);
+                    form.setList(table.dishBase);
+                    form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
+                });
+            }
+            if (dish.getCategory().equals("coctails")){
+                i++;
+                Button coctailsButton = new Button(dish.getName());
+                coctailsButton.setPrefSize(120,50);
+                coctailsPane.getChildren().addAll(coctailsButton);
+                coctailsPane.setConstraints(coctailsButton, columnIndex, cc);
+                if (i % 4 == 0){ cc++; columnIndex = 0; i=0; } else columnIndex++;
+                coctailsButton.setOnAction(event1 -> {
+                    table.dishBase.add(dish);
+                    resultOfOffer.add(dish);
+                    form.setList(table.dishBase);
+                    form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
+                });
+            }
+            if (dish.getCategory().equals("drinks")){
+                i++;
+                Button drinksButton = new Button(dish.getName());
+                drinksButton.setPrefSize(120,50);
+                drinksPane.getChildren().addAll(drinksButton);
+                drinksPane.setConstraints(drinksButton, columnIndex, d);
+                if (i % 4 == 0){ d++; columnIndex = 0; i=0; } else columnIndex++;
+                drinksButton.setOnAction(event1 -> {
+                    table.dishBase.add(dish);
+                    resultOfOffer.add(dish);
+                    form.setList(table.dishBase);
+                    form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
+                });
+            }
+            if (dish.getCategory().equals("water")){
+                i++;
+                Button waterButton = new Button(dish.getName());
+                waterButton.setPrefSize(120,50);
+                waterPane.getChildren().addAll(waterButton);
+                waterPane.setConstraints(waterButton, columnIndex, wt);
+                if (i % 4 == 0){ wt++; columnIndex = 0; i=0; } else columnIndex++;
+                waterButton.setOnAction(event1 -> {
+                    table.dishBase.add(dish);
+                    resultOfOffer.add(dish);
+                    form.setList(table.dishBase);
+                    form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
+                });
+            }
+            if (dish.getCategory().equals("hot")){
+                i++;
+                Button hotButton = new Button(dish.getName());
+                hotButton.setPrefSize(180,50);
+                hotPane.getChildren().addAll(hotButton);
+                hotPane.setConstraints(hotButton, columnIndex, h);
+                if (i % 4 == 0){ h++; columnIndex = 0; i=0; } else columnIndex++;
+                hotButton.setOnAction(event1 -> {
+                    table.dishBase.add(dish);
+                    resultOfOffer.add(dish);
+                    form.setList(table.dishBase);
+                    form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
+                });
+            }
+            if (dish.getCategory().equals("cold")){
+                i++;
+                Button coldButton = new Button(dish.getName());
+                coldButton.setPrefSize(180,50);
+                coldPane.getChildren().addAll(coldButton);
+                coldPane.setConstraints(coldButton, columnIndex, cl);
+                if (i % 4 == 0){ cl++; columnIndex = 0; i=0; } else columnIndex++;
+                coldButton.setOnAction(event1 -> {
+                    table.dishBase.add(dish);
+                    resultOfOffer.add(dish);
+                    form.setList(table.dishBase);
+                    form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
+                });
+            }
+            if (dish.getCategory().equals("salats")){
+                i++;
+                Button salatsButton = new Button(dish.getName());
+                salatsButton.setPrefSize(180,50);
+                salatsPane.getChildren().addAll(salatsButton);
+                salatsPane.setConstraints(salatsButton, columnIndex, s);
+                if (i % 4 == 0){ s++; columnIndex = 0; i=0; } else columnIndex++;
+                salatsButton.setOnAction(event1 -> {
+                    table.dishBase.add(dish);
+                    resultOfOffer.add(dish);
+                    form.setList(table.dishBase);
+                    form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
+                });
+            }
+            if (dish.getCategory().equals("soups")){
+                i++;
+                Button soupsButton = new Button(dish.getName());
+                soupsButton.setPrefSize(180,50);
+                soupsPane.getChildren().addAll(soupsButton);
+                soupsPane.setConstraints(soupsButton, columnIndex, sp);
+                if (i % 4 == 0){ sp++; columnIndex = 0; i=0; } else columnIndex++;
+                soupsButton.setOnAction(event1 -> {
+                    table.dishBase.add(dish);
+                    resultOfOffer.add(dish);
+                    form.setList(table.dishBase);
+                    form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
+                });
+            }
+            if (dish.getCategory().equals("deserts")){
+                i++;
+                Button desertsButton = new Button(dish.getName());
+                desertsButton.setPrefSize(180,50);
+                desertsPane.getChildren().addAll(desertsButton);
+                desertsPane.setConstraints(desertsButton, columnIndex, ds);
+                if (i % 4 == 0){ ds++; columnIndex = 0; i=0; } else columnIndex++;
+                desertsButton.setOnAction(event1 -> {
+                    table.dishBase.add(dish);
+                    resultOfOffer.add(dish);
+                    form.setList(table.dishBase);
+                    form.getDishTable().setItems(FXCollections.observableArrayList(table.dishBase));
                 });
             }
         }

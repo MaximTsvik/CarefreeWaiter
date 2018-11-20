@@ -10,7 +10,6 @@ import View.Offer;
 import View.WaiterFrame;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Controller {
@@ -58,7 +57,7 @@ public class Controller {
         offer.update();
         waiterFrame.update();
     }
-    
+
     public void alertMessage(String text){
         mainFrame.alertMessage(text);
     }

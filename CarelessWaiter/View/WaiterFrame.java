@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.util.List;
 
-
 public class WaiterFrame {
 
     private MainFrame mainFrame;
