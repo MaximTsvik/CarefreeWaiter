@@ -24,6 +24,7 @@ public class XMLDomParser {
     public void write1(File file, Table table) {
         this.file = file;
         this.table = table;
+        double allCost = 0;
         try {
             document = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
             Element list = document.createElement("list");
@@ -36,21 +37,23 @@ public class XMLDomParser {
                 name.setTextContent(table.dishBase.get(numOfDish).getName());
                 dish.appendChild(name);
 
-                Element category = document.createElement("category");
-                category.setTextContent(table.dishBase.get(numOfDish).getCategory());
-                dish.appendChild(category);
-
-                Element value = document.createElement("value");
-                value.setTextContent(String.valueOf(table.dishBase.get(numOfDish).getValue()));
-                dish.appendChild(value);
-
                 Element cost = document.createElement("cost");
                 cost.setTextContent(String.valueOf(table.dishBase.get(numOfDish).getCost()));
                 dish.appendChild(cost);
 
+                allCost += table.dishBase.get(numOfDish).getCost();
+
                 list.appendChild(dish);
             }
+
+            Element allCost1 = document.createElement("allCost");
+            Element cost1 = document.createElement("cost");
+            cost1.setTextContent(allCost + "");
+            allCost1.appendChild(cost1);
+            list.appendChild(allCost1);
+
             document.appendChild(list);
+
             Transformer transformer = TransformerFactory.newInstance().newTransformer();
             DOMSource source = new DOMSource(document);
             StreamResult streamResult = new StreamResult(file);
