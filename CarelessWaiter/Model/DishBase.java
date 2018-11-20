@@ -19,6 +19,7 @@ public class DishBase {
     private Controller controller;
     private List<Dish> dishBase = new ArrayList();
     private File file;
+    private Table table;
 
     public DishBase(Controller controller) {
         this.controller = controller;
@@ -40,9 +41,14 @@ public class DishBase {
         this.file = file;
     }
 
-    public void toFile(File file) {
+    public void toFile1(File file, Table table) {
         XMLDomParser domParser = new XMLDomParser();
-        domParser.write(file, this);
+        domParser.write1(file, table);
+    }
+
+    public void toFile2(File file, Table table) {
+        XMLDomParser domParser = new XMLDomParser();
+        domParser.write2(file, table);
     }
 
     public void fromFile() {
@@ -60,7 +66,6 @@ public class DishBase {
                 System.out.println(dish.getCategory());
 
             }
-//            mainFrame.update();
         } catch (SAXException | ParserConfigurationException | IOException ex) {
             String exText = ex.getMessage();
             controller.alertMessage(exText);

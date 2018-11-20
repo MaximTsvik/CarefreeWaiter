@@ -8,11 +8,13 @@ public class Table {
     private int number;
     private boolean free;
     public List<Dish> dishBase;
+    public List<Dish> resultOfOffer;
 
     public Table() {
         number = 0;
         free = true;
         dishBase = new ArrayList();
+        resultOfOffer = new ArrayList<>();
     }
 
     public boolean isFree(){

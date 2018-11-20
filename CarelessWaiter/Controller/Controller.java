@@ -47,8 +47,12 @@ public class Controller {
         tableBase.setFile(file);
     }
 
-    public void toFile(File file){
-        dishBase.toFile(file);
+    public void toFile1(File file, Table table){
+        dishBase.toFile1(file, table);
+    }
+
+    public void toFile2(File file, Table table){
+        dishBase.toFile2(file, table);
     }
 
     public void fromFile(){

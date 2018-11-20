@@ -6,7 +6,7 @@
 	</table>
 	<table>
 		<number>2</number>
-		<free>false</free>
+		<free>true</free>
 	</table>
 	<table>
 		<number>3</number>
@@ -14,7 +14,7 @@
 	</table>
 	<table>
 		<number>4</number>
-		<free>false</free>
+		<free>true</free>
 	</table>
 	<table>
 		<number>5</number>
@@ -34,7 +34,7 @@
 	</table>
 	<table>
 		<number>9</number>
-		<free>false</free>
+		<free>true</free>
 	</table>
 	<table>
 		<number>10</number>
@@ -42,7 +42,7 @@
 	</table>
 	<table>
 		<number>11</number>
-		<free>false</free>
+		<free>true</free>
 	</table>
 	<table>
 		<number>12</number>
@@ -360,6 +360,12 @@
     	<name>Оливье</name>
     	<category>salats</category>
     	<cost>8</cost>
+    	<value>1</value>
+    </dish>
+    <dish>
+    	<name>Морковь пикантная</name>
+    	<category>salats</category>
+    	<cost>4</cost>
     	<value>1</value>
     </dish>
     <dish>
