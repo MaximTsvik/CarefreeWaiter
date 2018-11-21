@@ -15,12 +15,9 @@ import java.util.List;
 
 public class WaiterFrame {
 
-    private MainFrame mainFrame;
     private Controller controller;
-    private Form form;
 
-    public WaiterFrame(MainFrame mainFrame, Controller controller) {
-        this.mainFrame = mainFrame;
+    public WaiterFrame(Controller controller) {
         this.controller = controller;
     }
 
@@ -50,7 +47,6 @@ public class WaiterFrame {
             File file = fileChooser.showOpenDialog(stage);
             controller.setFile(file);
             controller.fromFile();
-            update();
         });
 
         Button clac = new Button("Показать столы");
@@ -84,11 +80,5 @@ public class WaiterFrame {
         stage.setTitle("Официант");
         stage.setScene(scene);
         stage.showAndWait();
-    }
-
-    public void update() {
-        form.clear();
-        form.setList(controller.getDishBase());
-        form.getDishTable().setItems(FXCollections.observableArrayList(controller.getDishBase()));
     }
 }

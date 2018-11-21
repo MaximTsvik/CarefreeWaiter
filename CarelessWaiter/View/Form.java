@@ -1,6 +1,5 @@
 package View;
 
-
 import Model.Dish;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;

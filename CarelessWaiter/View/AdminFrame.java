@@ -15,12 +15,9 @@ import java.util.List;
 
 public class AdminFrame {
 
-    private MainFrame mainFrame;
     private Controller controller;
-    private Form form;
 
-    public AdminFrame(MainFrame mainFrame, Controller controller) {
-        this.mainFrame = mainFrame;
+    public AdminFrame(Controller controller) {
         this.controller = controller;
     }
 
@@ -51,7 +48,6 @@ public class AdminFrame {
             File file = fileChooser.showOpenDialog(stage);
             controller.setFile(file);
             controller.fromFile();
-            update();
         });
 
         Scene scene = new Scene(root, 900, 600);
@@ -67,7 +63,7 @@ public class AdminFrame {
                 root.setConstraints(tableView, columnIndex, rowIndex);
                 if ((table.getNumber()) % 4 == 0){ rowIndex++; columnIndex = 0; } else columnIndex++;
                 tableView.setOnAction(e -> {
-                    AdminTableFrame adminTableFrame = new AdminTableFrame(this.controller);
+                    AdminTableFrame adminTableFrame = new AdminTableFrame();
                     adminTableFrame.startAdminTableFrame(table);
                     stage.close();
                 });
@@ -81,11 +77,5 @@ public class AdminFrame {
         stage.setTitle("Администратор");
         stage.setScene(scene);
         stage.showAndWait();
-    }
-
-    public void update() {
-        form.clear();
-        form.setList(controller.getDishBase());
-        form.getDishTable().setItems(FXCollections.observableArrayList(controller.getDishBase()));
     }
 }

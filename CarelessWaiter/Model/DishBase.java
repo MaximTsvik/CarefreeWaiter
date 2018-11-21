@@ -1,6 +1,7 @@
 package Model;
 
 import Controller.Controller;
+import View.Form;
 import View.MainFrame;
 import XML.XMLDomParser;
 import XML.XMLSaxParser;
@@ -15,11 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DishBase {
-    private MainFrame mainFrame;
     private Controller controller;
     private List<Dish> dishBase = new ArrayList();
     private File file;
-    private Table table;
 
     public DishBase(Controller controller) {
         this.controller = controller;
@@ -31,10 +30,6 @@ public class DishBase {
 
     public List<Dish> getDishBase() {
         return dishBase;
-    }
-
-    public Controller getController() {
-        return controller;
     }
 
     public void setFile(File file) {
@@ -66,10 +61,6 @@ public class DishBase {
                 System.out.println(dish.getCategory());
 
             }
-        } catch (SAXException | ParserConfigurationException | IOException ex) {
-            String exText = ex.getMessage();
-            controller.alertMessage(exText);
-        }
+        } catch (SAXException | ParserConfigurationException | IOException ex) { }
     }
-
     }

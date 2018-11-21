@@ -90,10 +90,6 @@ public class XMLDomParser {
                 value.setTextContent(String.valueOf(table.resultOfOffer.get(numOfDish).getValue()));
                 dish.appendChild(value);
 
-                Element cost = document.createElement("cost");
-                cost.setTextContent(String.valueOf(table.resultOfOffer.get(numOfDish).getCost()));
-                dish.appendChild(cost);
-
                 list.appendChild(dish);
             }
             table.resultOfOffer = new ArrayList<>();

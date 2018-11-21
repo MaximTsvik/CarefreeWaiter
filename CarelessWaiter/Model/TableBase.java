@@ -1,6 +1,7 @@
 package Model;
 
 import Controller.Controller;
+import View.Form;
 import View.MainFrame;
 import XML.XMLSaxParser;
 import org.xml.sax.SAXException;
@@ -15,10 +16,10 @@ import java.util.List;
 
 public class TableBase {
 
-    private MainFrame mainFrame;
     private Controller controller;
     private List<Table> tableBase = new ArrayList();
     private File file;
+    private Form form;
 
     public TableBase(Controller controller) {
         this.controller = controller;
@@ -36,7 +37,12 @@ public class TableBase {
         this.file = file;
     }
 
+    public void setForm(Form form) {
+        this.form = form;
+    }
+
     public void fromFile() {
+        setForm(form);
         SAXParserFactory factory = SAXParserFactory.newInstance();
         XMLSaxParser saxParser = new XMLSaxParser();
         saxParser.setTableBase(this);
@@ -48,11 +54,7 @@ public class TableBase {
                 System.out.println(table.getNumber());
                 System.out.println(table.isFree());
             }
-            mainFrame.update();
-        } catch (SAXException | ParserConfigurationException | IOException ex) {
-            String exText = ex.getMessage();
-            controller.alertMessage(exText);
-        }
-    }
+        } catch (SAXException | ParserConfigurationException | IOException ex){
+        }}
 
 }

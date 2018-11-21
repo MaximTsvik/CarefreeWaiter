@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 
 public class MainFrame {
     private Controller controller;
-    private Form form;
 
     public MainFrame(Controller controller) {
 
@@ -31,12 +30,12 @@ public class MainFrame {
         root.getChildren().addAll(StartText, admin, waiter);
 
         admin.setOnAction((event) -> {
-            AdminFrame adminFrame = new AdminFrame(this, this.controller);
+            AdminFrame adminFrame = new AdminFrame(this.controller);
             adminFrame.start();
         });
 
         waiter.setOnAction((event) -> {
-            WaiterFrame waiterFrame = new WaiterFrame(this, this.controller);
+            WaiterFrame waiterFrame = new WaiterFrame(this.controller);
             waiterFrame.start();
         });
 
@@ -60,12 +59,6 @@ public class MainFrame {
         primaryStage.setScene(scene);
         primaryStage.setTitle("CarelessWaiter");
         primaryStage.show();
-    }
-
-    public void update() {
-        form.clear();
-        form.setList(controller.getDishBase());
-        form.getDishTable().setItems(FXCollections.observableArrayList(controller.getDishBase()));
     }
 
     public void alertMessage(String text) {

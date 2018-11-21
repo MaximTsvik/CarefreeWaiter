@@ -17,13 +17,6 @@ import java.util.ArrayList;
 public class AdminTableFrame {
 
     private Form form;
-    private Controller controller;
-    private Dish dish;
-    private Table table;
-
-    public AdminTableFrame(Controller controller) {
-        this.controller = controller;
-    }
 
     public void startAdminTableFrame (Table table) {
         Label label2 = new Label("Выбран столик: " + table.getNumber());
@@ -62,7 +55,6 @@ public class AdminTableFrame {
         stage.setTitle(table.getNumber() + " стол");
         stage.setScene(scene);
         stage.showAndWait();
-
     }
 }
 

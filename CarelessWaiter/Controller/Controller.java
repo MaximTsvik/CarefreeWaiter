@@ -13,9 +13,6 @@ import java.io.File;
 import java.util.List;
 
 public class Controller {
-    private Form form;
-    private Offer offer;
-    private WaiterFrame waiterFrame;
     private MainFrame mainFrame;
     private DishBase dishBase;
     private TableBase tableBase;
@@ -58,11 +55,5 @@ public class Controller {
     public void fromFile(){
         dishBase.fromFile();
         tableBase.fromFile();
-        offer.update();
-        waiterFrame.update();
-    }
-
-    public void alertMessage(String text){
-        mainFrame.alertMessage(text);
     }
 }
